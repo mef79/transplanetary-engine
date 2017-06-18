@@ -2,6 +2,8 @@ import { injectGlobal } from 'styled-components';
 
 /* eslint no-unused-expressions: 0 */
 injectGlobal`
+  @import url('https://fonts.googleapis.com/css?family=VT323');
+  @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
   html,
   body {
     height: 100%;

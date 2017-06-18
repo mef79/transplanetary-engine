@@ -19,15 +19,17 @@ export default function createRoutes(store) {
   return [
     {
       path: '/',
-      name: 'home',
+      name: 'game',
       getComponent(nextState, cb) {
         const importModules = Promise.all([
-          import('containers/HomePage'),
+          import('containers/Game'),
+          import('containers/Game/sagas'),
         ]);
 
         const renderRoute = loadModule(cb);
 
-        importModules.then(([component]) => {
+        importModules.then(([component, gameSagas]) => {
+          injectSagas(gameSagas.default);
           renderRoute(component);
         });
 
