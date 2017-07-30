@@ -80,7 +80,7 @@
       }
     }
   },
-   "eslintConfig": {
+  "eslintConfig": {
     "parser": "babel-eslint",
     "extends": "airbnb",
     "env": {
@@ -244,6 +244,7 @@
     "lodash": "4.17.2",
     "minimist": "1.2.0",
     "react": "15.4.1",
+    "react-anime": "^0.3.4",
     "react-dom": "15.4.1",
     "react-helmet": "3.2.2",
     "react-intl": "2.1.5",
@@ -285,6 +286,7 @@
     "eslint-config-airbnb": "13.0.0",
     "eslint-config-airbnb-base": "10.0.1",
     "eslint-import-resolver-webpack": "0.8.0",
+    "eslint-plugin-flowtype": "^2.35.0",
     "eslint-plugin-import": "2.2.0",
     "eslint-plugin-jsx-a11y": "2.2.3",
     "eslint-plugin-react": "6.7.1",
