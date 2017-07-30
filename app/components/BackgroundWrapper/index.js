@@ -16,7 +16,7 @@ class BackgroundWrapper extends React.PureComponent { // eslint-disable-line rea
       height: 100vh;
       padding-top:1em;
 
-    `;
+    `
     return (
       <Background>
         {React.Children.toArray(this.props.children)}

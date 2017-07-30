@@ -16,7 +16,7 @@ const selectGameDomain = () => state => state.get('game')
 
 const makeSelectGame = () => createSelector(
   selectGameDomain(),
-  (substate) => substate.toJS()
+  substate => substate.toJS()
 )
 
 export default makeSelectGame

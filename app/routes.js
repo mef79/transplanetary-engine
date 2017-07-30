@@ -31,7 +31,7 @@ export default function createRoutes(store) {
         importModules.then(([component, gameSagas]) => {
           injectSagas(gameSagas.default)
           renderRoute(component)
-        });
+        })
 
         importModules.catch(errorLoading)
       },

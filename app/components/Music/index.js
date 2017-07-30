@@ -12,8 +12,7 @@ import SickBlackSea from 'music/Sickblacksea.mp3'
 class Music extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
-      <audio
-        src={SickBlackSea} autoPlay>
+      <audio src={SickBlackSea} autoPlay>
       </audio>
     )
   }

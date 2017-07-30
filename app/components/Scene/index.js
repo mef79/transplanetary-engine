@@ -7,8 +7,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { FormattedMessage } from 'react-intl'
-import messages from './messages'
+// import { FormattedMessage } from 'react-intl'
+// import messages from './messages'
 import SceneTitle from 'components/SceneTitle'
 
 class Scene extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
@@ -20,7 +20,7 @@ class Scene extends React.PureComponent { // eslint-disable-line react/prefer-st
     `
     return (
       <SceneContainer>
-        <SceneTitle/>
+        <SceneTitle />
         {React.Children.toArray(this.props.children)}
       </SceneContainer>
     )
