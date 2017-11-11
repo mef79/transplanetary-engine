@@ -13,7 +13,6 @@ npm-debug.log
 reports
 
 # nightwatch drivers
-nightwatch/bin/chromedriver
-nightwatch/bin/geckodriver
+nightwatch/bin
 
 selenium-debug.log
