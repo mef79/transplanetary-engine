@@ -16,7 +16,10 @@ import TitlePage from 'containers/TitlePage'
 export class Game extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
-      <TitlePage />
+      <div>
+        { /* <Menu /> */ }
+        <TitlePage />
+      </div>
     )
   }
 }
