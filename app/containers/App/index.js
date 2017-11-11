@@ -11,12 +11,18 @@
  * the linting exception.
  */
 
-import React from 'react'
+import React, { PropTypes } from 'react'
+import { instanceOf } from 'prop-types'
+import { connect } from 'react-redux'
+import { withCookies, Cookies } from 'react-cookie'
+import { createStructuredSelector } from 'reselect'
+import { setSavedData, setCookies } from './actions'
 
-export default class App extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+class App extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 
-  static propTypes = {
-    children: React.PropTypes.node,
+  componentWillMount() {
+    this.props.setSavedData(this.props.cookies.get('savedData'))
+    this.props.setCookies(this.props.cookies)
   }
 
   render() {
@@ -27,3 +33,21 @@ export default class App extends React.PureComponent { // eslint-disable-line re
     )
   }
 }
+
+App.propTypes = {
+  children: PropTypes.node,
+  cookies: instanceOf(Cookies).isRequired,
+  setSavedData: PropTypes.func.isRequired,
+  setCookies: PropTypes.func.isRequired,
+}
+
+const mapStateToProps = createStructuredSelector({})
+
+function mapDispatchToProps(dispatch) {
+  return {
+    setSavedData: savedData => dispatch(setSavedData(savedData)),
+    setCookies: cookies => dispatch(setCookies(cookies)),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withCookies(App))

@@ -10,10 +10,15 @@ import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
 import makeSelectGame from './selectors'
 // import messages from './messages'
+import { makeDecision } from './actions'
 
 import SceneContext from 'components/SceneContext'
 
 export class Game extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+  componentWillMount() {
+    this.props.makeDecision()
+  }
+
   render() {
     return (
       <SceneContext />
@@ -22,7 +27,7 @@ export class Game extends React.PureComponent { // eslint-disable-line react/pre
 }
 
 Game.propTypes = {
-  dispatch: PropTypes.func.isRequired
+  makeDecision: PropTypes.func.isRequired
 }
 
 const mapStateToProps = createStructuredSelector({
@@ -31,7 +36,7 @@ const mapStateToProps = createStructuredSelector({
 
 function mapDispatchToProps(dispatch) {
   return {
-    dispatch
+    makeDecision: () => dispatch(makeDecision())
   }
 }
 
