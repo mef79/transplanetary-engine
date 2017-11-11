@@ -9,6 +9,7 @@ import { LOCATION_CHANGE } from 'react-router-redux'
 
 import languageProviderReducer from 'containers/LanguageProvider/reducer'
 import gameReducer from 'containers/Game/reducer'
+import menuReducer from 'containers/Menu/reducer'
 /*
  * routeReducer
  *
@@ -45,6 +46,7 @@ export default function createReducer(asyncReducers) {
     route: routeReducer,
     game: gameReducer,
     language: languageProviderReducer,
+    menu: menuReducer,
     ...asyncReducers,
   })
 }
