@@ -8,8 +8,9 @@ import { fromJS } from 'immutable'
 import {
   DEFAULT_ACTION
 } from './constants'
+import storyData from '../../ink/story.json'
 
-const initialState = fromJS({})
+const initialState = fromJS({storyData})
 
 function gameReducer(state = initialState, action) {
   switch (action.type) {
