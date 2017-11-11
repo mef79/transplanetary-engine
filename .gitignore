@@ -8,3 +8,12 @@ stats.json
 .DS_Store
 npm-debug.log
 .idea
+
+# nightwatch reports
+reports
+
+# nightwatch drivers
+nightwatch/bin/chromedriver
+nightwatch/bin/geckodriver
+
+selenium-debug.log
