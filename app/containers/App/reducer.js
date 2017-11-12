@@ -10,10 +10,8 @@ import {
   SAVE_DATA,
   SET_COOKIES,
 } from './constants'
-import storyData from '../../ink/story.json'
 
 const initialState = fromJS({
-  storyData,
   savedData: {
     loadCounter: 0
   },
