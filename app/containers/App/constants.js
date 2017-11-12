@@ -10,3 +10,6 @@
  */
 
 export const DEFAULT_LOCALE = 'en'
+export const SET_SAVED_DATA = 'app/Game/SET_SAVED_DATA'
+export const SAVE_DATA = 'app/Game/SAVE_DATA'
+export const SET_COOKIES = 'app/Game/SET_COOKIES'

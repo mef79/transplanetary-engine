@@ -16,7 +16,7 @@ const selectMenuDomain = () => state => state.get('menu')
 
 const makeSelectMenu = () => createSelector(
   selectMenuDomain(),
-  (substate) => substate.toJS()
+  substate => substate.toJS()
 )
 
 export default makeSelectMenu

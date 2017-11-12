@@ -16,7 +16,7 @@ const selectTitlePageDomain = () => state => state.get('titlePage')
 
 const makeSelectTitlePage = () => createSelector(
   selectTitlePageDomain(),
-  (substate) => substate.toJS()
+  substate => substate.toJS()
 )
 
 export default makeSelectTitlePage

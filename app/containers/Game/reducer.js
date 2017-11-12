@@ -7,7 +7,8 @@
 import { fromJS } from 'immutable'
 import {
   DEFAULT_ACTION,
-  SET_CURRENT_STITCH
+  SET_CURRENT_STITCH,
+  MAKE_DECISION,
 } from './constants'
 import storyData from '../../ink/story.json'
 
@@ -16,9 +17,10 @@ const initialState = fromJS({
   currentStitch: null
 })
 
-
 function gameReducer(state = initialState, action) {
   switch (action.type) {
+    case MAKE_DECISION:
+      return state
     case DEFAULT_ACTION:
       return state
     case SET_CURRENT_STITCH:

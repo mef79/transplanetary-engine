@@ -21,7 +21,7 @@ export class TitlePage extends React.PureComponent { // eslint-disable-line reac
       align-items: center;
       justify-content: space-around;
     `
-    const onStartButtonClick = ev => {
+    const onStartButtonClick = () => {
       this.props.onStartClick(this.props.initialStitchName)
     }
     return (
@@ -38,9 +38,9 @@ export class TitlePage extends React.PureComponent { // eslint-disable-line reac
 }
 
 TitlePage.propTypes = {
-
   title: PropTypes.string.isRequired,
   initialStitchName: PropTypes.string.isRequired,
+  onStartClick: PropTypes.func.isRequired,
 }
 
 const mapStateToProps = createStructuredSelector({

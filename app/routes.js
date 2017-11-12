@@ -24,12 +24,14 @@ export default function createRoutes(store) {
         const importModules = Promise.all([
           import('containers/Game'),
           import('containers/Game/sagas'),
+          import('containers/App/sagas'),
         ])
 
         const renderRoute = loadModule(cb)
 
-        importModules.then(([component, gameSagas]) => {
+        importModules.then(([component, gameSagas, appSagas]) => {
           injectSagas(gameSagas.default)
+          injectSagas(appSagas.default)
           renderRoute(component)
         })
 
