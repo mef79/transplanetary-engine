@@ -27,8 +27,13 @@ const selectStoryTitle = () => createSelector(
 const selectInitialStitchName = () => createSelector(
   selectGameDomain(),
   gameDomain => gameDomain.get('storyData').get('data').get('initial')
-
 )
+
+const selectCurrentStitch = () => createSelector(
+  selectGameDomain(),
+  gameDomain => gameDomain.get('storyData').get('data').get('currentStitch')
+)
+
 /*
 const getSelectedNode = () => createSelector(
   selectHome,
@@ -40,5 +45,6 @@ export default makeSelectGame
 export {
   selectGameDomain,
   selectStoryTitle,
-  selectInitialStitchName
+  selectInitialStitchName,
+  selectCurrentStitch
 }

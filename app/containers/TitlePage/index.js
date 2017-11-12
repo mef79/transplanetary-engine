@@ -8,6 +8,7 @@ import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
 import { selectStoryTitle, selectInitialStitchName } from '../Game/selectors'
+import { setCurrentStitch } from '../Game/actions'
 
 export class TitlePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
@@ -27,14 +28,16 @@ export class TitlePage extends React.PureComponent { // eslint-disable-line reac
         <Title>
           {this.props.title}
         </Title>
-        {this.props.initialStitchName}
+        <button onClick={this.props.onStartClick(this.props.initialStitchName)}>
+        Start Game
+        </button>
       </PageLayout>
     )
   }
 }
 
 TitlePage.propTypes = {
-  dispatch: PropTypes.func.isRequired,
+
   title: PropTypes.string.isRequired,
   initialStitchName: PropTypes.string.isRequired,
 }
@@ -46,7 +49,9 @@ const mapStateToProps = createStructuredSelector({
 
 function mapDispatchToProps(dispatch) {
   return {
-    dispatch
+    onStartClick: stitchName => {
+      dispatch(setCurrentStitch(stitchName))
+    }
   }
 }
 
