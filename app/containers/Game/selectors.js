@@ -5,15 +5,6 @@ import { createSelector } from 'reselect'
  */
 const selectGameDomain = () => state => state.get('game')
 
-/**
- * Other specific selectors
- */
-
-
-/**
- * Default selector used by Game
- */
-
 const makeSelectGame = () => createSelector(
   selectGameDomain(),
   substate => substate.toJS()
@@ -27,8 +18,13 @@ const selectStoryTitle = () => createSelector(
 const selectInitialStitchName = () => createSelector(
   selectGameDomain(),
   gameDomain => gameDomain.get('storyData').get('data').get('initial')
-
 )
+
+const selectCurrentStitch = () => createSelector(
+  selectGameDomain(),
+  gameDomain => gameDomain.get('currentStitch')
+)
+
 /*
 const getSelectedNode = () => createSelector(
   selectHome,
@@ -40,5 +36,6 @@ export default makeSelectGame
 export {
   selectGameDomain,
   selectStoryTitle,
-  selectInitialStitchName
+  selectInitialStitchName,
+  selectCurrentStitch
 }
