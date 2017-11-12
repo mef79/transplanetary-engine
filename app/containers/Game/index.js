@@ -9,7 +9,7 @@ import { connect } from 'react-redux'
 // import { FormattedMessage } from 'react-intl'
 import { createStructuredSelector } from 'reselect'
 import makeSelectGame from './selectors'
-import {selectCurrentStitch} from './selectors'
+import { selectCurrentStitch } from './selectors'
 import Stitch from 'containers/Stitch'
 // import messages from './messages'
 
@@ -17,16 +17,14 @@ import TitlePage from 'containers/TitlePage'
 
 export class Game extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
-    console.log(this.props.currentStitch)
-    if (this.props.currentStitch)
-    {
+    if (this.props.currentStitch) {
       return (
-          <Stitch />
+        <Stitch />
       )
     }
-    else{
-      return(
-          <TitlePage />
+    else {
+      return (
+        <TitlePage />
       )
     }
   }

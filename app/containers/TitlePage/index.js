@@ -7,14 +7,13 @@ import styled from 'styled-components'
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
-import { selectStoryTitle, selectInitialStitchName } from '../Game/selectors'
-import { setCurrentStitch } from '../Game/actions'
+import { selectStoryTitle, selectInitialStitchName } from 'containers/Game/selectors'
+import { setCurrentStitch } from 'containers/Game/actions'
 
 export class TitlePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     const Title = styled.h1`
       font-size:1.2em;
-
     `
     const PageLayout = styled.div`
       display: flex;
@@ -22,14 +21,16 @@ export class TitlePage extends React.PureComponent { // eslint-disable-line reac
       align-items: center;
       justify-content: space-around;
     `
+    const onStartButtonClick = ev => {
+      this.props.onStartClick(this.props.initialStitchName)
+    }
     return (
-
       <PageLayout>
         <Title>
           {this.props.title}
         </Title>
-        <button onClick={this.props.onStartClick(this.props.initialStitchName)}>
-        Start Game
+        <button onClick={onStartButtonClick}>
+          Start Game
         </button>
       </PageLayout>
     )
