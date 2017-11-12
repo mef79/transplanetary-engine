@@ -11,15 +11,14 @@ import { createStructuredSelector } from 'reselect'
 import makeSelectGame from './selectors'
 // import messages from './messages'
 
-// import Menu from 'containers/Menu'
-import SceneContext from 'components/SceneContext'
+import TitlePage from 'containers/TitlePage'
 
 export class Game extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
       <div>
         { /* <Menu /> */ }
-        <SceneContext />
+        <TitlePage />
       </div>
     )
   }
