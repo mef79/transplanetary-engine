@@ -1,4 +1,5 @@
 import { createSelector } from 'reselect'
+import { fromJS } from 'immutable'
 
 /**
  * Direct selector to the game state domain
@@ -25,6 +26,19 @@ const selectCurrentStitch = () => createSelector(
   gameDomain => gameDomain.get('currentStitch')
 )
 
+const selectCurrentStitchChoices = () => createSelector(
+  selectCurrentStitch(),
+  currentStitch => {
+    const choices = []
+    currentStitch.get('content').toJS().forEach(element => {
+      if(element.option){
+        choices.push(element)
+      }
+    })
+    return choices
+  }
+)
+
 /*
 const getSelectedNode = () => createSelector(
   selectHome,
@@ -37,5 +51,6 @@ export {
   selectGameDomain,
   selectStoryTitle,
   selectInitialStitchName,
-  selectCurrentStitch
+  selectCurrentStitch,
+  selectCurrentStitchChoices
 }
