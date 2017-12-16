@@ -7,16 +7,25 @@ import { fromJS } from 'immutable'
 import { routerMiddleware } from 'react-router-redux'
 import createSagaMiddleware from 'redux-saga'
 import createReducer from './reducers'
+import soundsMiddleware from 'redux-sounds'
+import lodoink from 'music/doinklo.mp3'
 
 const sagaMiddleware = createSagaMiddleware()
 
 export default function configureStore(initialState = {}, history) {
+  // Our soundsData is an object. The keys are the names of our sounds.
+  const soundsData = {
+    // If no additional configuration is necessary, we can just pass a string  as the path to our file.
+    doinkLo: lodoink,
+  }
+
   // Create the store with two middlewares
   // 1. sagaMiddleware: Makes redux-sagas work
   // 2. routerMiddleware: Syncs the location/URL path to the state
   const middlewares = [
     sagaMiddleware,
     routerMiddleware(history),
+    soundsMiddleware(soundsData),
   ]
 
   const enhancers = [
