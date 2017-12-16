@@ -8,7 +8,7 @@ import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
 import { selectStoryTitle, selectInitialStitchName } from 'containers/Game/selectors'
-import { setCurrentStitch } from 'containers/Game/actions'
+import { setCurrentStitch, playDoinkLo } from 'containers/Game/actions'
 
 export class TitlePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
@@ -51,6 +51,7 @@ const mapStateToProps = createStructuredSelector({
 function mapDispatchToProps(dispatch) {
   return {
     onStartClick: stitchName => {
+      dispatch(playDoinkLo())
       dispatch(setCurrentStitch(stitchName))
     }
   }
