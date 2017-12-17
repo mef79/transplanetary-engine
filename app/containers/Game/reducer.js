@@ -14,7 +14,7 @@ import storyData from '../../ink/story.json'
 
 const initialState = fromJS({
   storyData,
-  currentStitch: null
+  currentStitch: null,
 })
 
 function gameReducer(state = initialState, action) {

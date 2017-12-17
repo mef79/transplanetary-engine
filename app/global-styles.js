@@ -37,4 +37,8 @@ injectGlobal`
   .small-caps {
     font-variant: small-caps;
   }
+
+  .slider__tick {
+    height: 10px;
+  }
 `
