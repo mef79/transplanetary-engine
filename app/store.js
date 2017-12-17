@@ -20,7 +20,7 @@ export default function configureStore(initialState = {}, history) {
   const allSounds = {}
   Object.keys(soundNameToFile).forEach(soundName => {
     for (let i = 1; i <= 10; i++) {
-      allSounds[`${soundName}'_volume_'${i.toString()}`] = {
+      allSounds[`${soundName}_volume_${i.toString()}`] = {
         urls: [soundNameToFile[soundName]],
         volume: i / 10.0
       }
