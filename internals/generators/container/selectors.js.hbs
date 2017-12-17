@@ -11,15 +11,15 @@ const select{{ properCase name }}Domain = () => state => state.get('{{ camelCase
 
 
 /**
- * Default selector used by {{ properCase name }}
+ * Example selector
  */
 
-const makeSelect{{ properCase name }} = () => createSelector(
-  select{{ properCase name }}Domain(),
-  (substate) => substate.toJS()
-)
+// const selectThingFromStore = () => createSelector(
+//  select{{ properCase name }}Domain(),
+//  (substate) => substate.get('nameOfThingInStore')
+//)
 
-export default makeSelect{{ properCase name }}
-export {
-  select{{ properCase name }}Domain,
-}
+// uncomment this once there's a selector to put in it
+// export {
+//  select{{ properCase name }}Domain,
+//}
