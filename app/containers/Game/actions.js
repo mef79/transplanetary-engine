@@ -8,7 +8,6 @@ import {
   DEFAULT_ACTION,
   MAKE_DECISION,
   SET_CURRENT_STITCH,
-  PLAY_DOINK_LO,
 } from './constants'
 
 export function defaultAction() {
@@ -27,12 +26,5 @@ export function setCurrentStitch(stitchName) {
   return {
     type: SET_CURRENT_STITCH,
     stitchName
-  }
-}
-
-export function playDoinkLo() {
-  return {
-    type: PLAY_DOINK_LO,
-    meta: { sound: 'doinkLo' }
   }
 }
