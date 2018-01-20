@@ -16,7 +16,7 @@ const selectChoicesDomain = () => state => state.get('choices')
 
 const makeSelectChoices = () => createSelector(
   selectChoicesDomain(),
-  (substate) => substate.toJS()
+  substate => substate.toJS()
 )
 
 export default makeSelectChoices

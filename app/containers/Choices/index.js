@@ -11,7 +11,7 @@ import { setCurrentStitch } from 'containers/Game/actions'
 import Choice from 'components/Choice'
 import makeSelectChoices from './selectors'
 
-export class Choices extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+class Choices extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 
   renderChoices = () => {
     const choicesToRender = []
@@ -20,7 +20,10 @@ export class Choices extends React.PureComponent { // eslint-disable-line react/
         <Choice
           key={choice.linkPath}
           choice={choice}
-          clickFunc={() => this.props.navigateToStitch(choice.option)}
+          clickFunc={ event => {
+            event.preventDefault()
+            this.props.navigateToStitch(choice.linkPath)
+          }}
         />
       )
     )
@@ -39,7 +42,8 @@ export class Choices extends React.PureComponent { // eslint-disable-line react/
 }
 
 Choices.propTypes = {
-  choices: PropTypes.array.isRequired
+  choices: PropTypes.array.isRequired,
+  navigateToStitch: PropTypes.func.isRequired
 }
 
 const mapStateToProps = createStructuredSelector({

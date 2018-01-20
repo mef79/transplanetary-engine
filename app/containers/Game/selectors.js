@@ -1,5 +1,4 @@
 import { createSelector } from 'reselect'
-import { fromJS } from 'immutable'
 
 /**
  * Direct selector to the game state domain
@@ -31,7 +30,7 @@ const selectCurrentStitchChoices = () => createSelector(
   currentStitch => {
     const choices = []
     currentStitch.get('content').toJS().forEach(element => {
-      if(element.option){
+      if (element.option) {
         choices.push(element)
       }
     })

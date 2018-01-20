@@ -8,7 +8,7 @@ import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
 import { selectCurrentStitch, selectCurrentStitchChoices } from 'containers/Game/selectors'
-import { Choices } from 'containers/Choices'
+import Choices from 'containers/Choices'
 
 export class Stitch extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   formatStitchContent = content => {
@@ -23,10 +23,10 @@ export class Stitch extends React.PureComponent { // eslint-disable-line react/p
     return (
       <div>
         <div
-        id="stitchContent"
-        dangerouslySetInnerHTML={{ __html: this.formatStitchContent(this.props.currentStitch.get('content').get(0)) }}
+          id="stitchContent"
+          dangerouslySetInnerHTML={{ __html: this.formatStitchContent(this.props.currentStitch.get('content').get(0)) }}
         />
-        <Choices choices={this.props.currentStitchChoices}/>
+        <Choices choices={this.props.currentStitchChoices} />
       </div>
     )
   }
@@ -35,6 +35,7 @@ export class Stitch extends React.PureComponent { // eslint-disable-line react/p
 Stitch.propTypes = {
   dispatch: PropTypes.func.isRequired,
   currentStitch: PropTypes.object.isRequired,
+  currentStitchChoices: PropTypes.array
 }
 
 const mapStateToProps = createStructuredSelector({
