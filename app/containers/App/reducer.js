@@ -9,6 +9,8 @@ import {
   SET_SAVED_DATA,
   SAVE_DATA,
   SET_COOKIES,
+  SET_PLAYING_SOUND,
+  SET_VOLUME,
 } from './constants'
 
 const initialState = fromJS({
@@ -16,6 +18,7 @@ const initialState = fromJS({
     loadCounter: 0
   },
   cookies: undefined,
+  volume: 2,
 })
 
 function appReducer(state = initialState, action) {
@@ -41,6 +44,12 @@ function appReducer(state = initialState, action) {
 
     case SET_COOKIES:
       return state.set('cookies', action.cookies)
+
+    case SET_PLAYING_SOUND:
+      return state.set('playingSound', action.sound)
+
+    case SET_VOLUME:
+      return state.set('volume', action.volume)
 
     default:
       return state

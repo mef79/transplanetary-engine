@@ -13,6 +13,7 @@ import { makeDecision } from './actions'
 
 import Stitch from 'containers/Stitch'
 import TitlePage from 'containers/TitlePage'
+import Menu from 'containers/Menu'
 
 export class Game extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   componentWillMount() {
@@ -22,7 +23,12 @@ export class Game extends React.PureComponent { // eslint-disable-line react/pre
   }
 
   render() {
-    return this.props.currentStitch ? <Stitch /> : <TitlePage />
+    return (
+      <div>
+        <Menu />
+        { this.props.currentStitch ? <Stitch /> : <TitlePage /> }
+      </div>
+    )
   }
 }
 

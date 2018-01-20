@@ -1,3 +1,7 @@
+import { createSelector } from 'reselect'
+
+const selectAppDomain = () => state => state.get('app')
+
 // makeSelectLocationState expects a plain JS object for the routing state
 const makeSelectLocationState = () => {
   let prevRoutingState
@@ -15,6 +19,18 @@ const makeSelectLocationState = () => {
   }
 }
 
+const getVolume = () => createSelector(
+  selectAppDomain(),
+  appDomain => appDomain.get('volume')
+)
+
+const getPlayingSound = () => createSelector(
+  selectAppDomain(),
+  appDomain => appDomain.get('playingSound')
+)
+
 export {
   makeSelectLocationState,
+  getVolume,
+  getPlayingSound,
 }

@@ -7,7 +7,7 @@
 import {
   DEFAULT_ACTION,
   MAKE_DECISION,
-  SET_CURRENT_STITCH
+  SET_CURRENT_STITCH,
 } from './constants'
 
 export function defaultAction() {

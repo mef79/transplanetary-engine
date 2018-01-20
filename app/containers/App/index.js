@@ -41,7 +41,8 @@ App.propTypes = {
   setCookies: PropTypes.func.isRequired,
 }
 
-const mapStateToProps = createStructuredSelector({})
+const mapStateToProps = createStructuredSelector({
+})
 
 function mapDispatchToProps(dispatch) {
   return {

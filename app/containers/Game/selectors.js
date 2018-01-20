@@ -38,6 +38,11 @@ const selectCurrentStitchChoices = () => createSelector(
   }
 )
 
+const getVolume = () => createSelector(
+  selectGameDomain(),
+  gameDomain => gameDomain.get('volume')
+)
+
 /*
 const getSelectedNode = () => createSelector(
   selectHome,
@@ -51,5 +56,6 @@ export {
   selectStoryTitle,
   selectInitialStitchName,
   selectCurrentStitch,
-  selectCurrentStitchChoices
+  selectCurrentStitchChoices,
+  getVolume,
 }
