@@ -2,6 +2,8 @@
  *
  * {{properCase name }}
  *
+ * usage: import {{properCase name }} from 'containers/{{properCase name }}'
+ *
  */
 
 import React, { PropTypes } from 'react'
@@ -14,13 +16,13 @@ import { FormattedMessage } from 'react-intl'
 {{/if}}
 {{#if wantActionsAndReducer}}
 import { createStructuredSelector } from 'reselect'
-import makeSelect{{properCase name}} from './selectors'
+// import { selectors } from './selectors'
 {{/if}}
 {{#if wantMessages}}
 import messages from './messages'
 {{/if}}
 
-export class {{ properCase name }} extends React.{{{ component }}} { // eslint-disable-line react/prefer-stateless-function
+class {{ properCase name }} extends React.{{{ component }}} { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
       <div>
@@ -41,18 +43,18 @@ export class {{ properCase name }} extends React.{{{ component }}} { // eslint-d
 }
 
 {{ properCase name }}.propTypes = {
-  dispatch: PropTypes.func.isRequired
+  // specify proptypes here
 }
 
 {{#if wantActionsAndReducer}}
 const mapStateToProps = createStructuredSelector({
-  {{name}}: makeSelect{{properCase name}}()
+  // add selectors here
 })
 {{/if}}
 
 function mapDispatchToProps(dispatch) {
   return {
-    dispatch
+    // nameOfFunctionToCall: inputName => dispatch(nameOfAction()),
   }
 }
 
