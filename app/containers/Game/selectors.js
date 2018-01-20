@@ -25,6 +25,19 @@ const selectCurrentStitch = () => createSelector(
   gameDomain => gameDomain.get('currentStitch')
 )
 
+const selectCurrentStitchChoices = () => createSelector(
+  selectCurrentStitch(),
+  currentStitch => {
+    const choices = []
+    currentStitch.get('content').toJS().forEach(element => {
+      if (element.option) {
+        choices.push(element)
+      }
+    })
+    return choices
+  }
+)
+
 const getVolume = () => createSelector(
   selectGameDomain(),
   gameDomain => gameDomain.get('volume')
@@ -43,5 +56,6 @@ export {
   selectStoryTitle,
   selectInitialStitchName,
   selectCurrentStitch,
+  selectCurrentStitchChoices,
   getVolume,
 }
