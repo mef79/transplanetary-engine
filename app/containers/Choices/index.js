@@ -7,26 +7,27 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
-import { setCurrentStitch } from 'containers/Game/actions'
+import { setCurrentContext } from 'containers/Game/actions'
+import { selectOptions } from 'containers/Game/selectors'
 import Choice from 'components/Choice'
-import makeSelectChoices from './selectors'
 
 class Choices extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 
   renderChoices = () => {
     const choicesToRender = []
-    this.props.choices.forEach(choice =>
+    this.props.options.forEach(choice => {
+      const choiceObject = choice.toJS()
       choicesToRender.push(
         <Choice
-          key={choice.linkPath}
-          choice={choice}
+          key={choiceObject.linkPath}
+          choice={choiceObject}
           clickFunc={ event => {
             event.preventDefault()
-            this.props.navigateToStitch(choice.linkPath)
+            this.props.navigateToStitch(choiceObject.linkPath)
           }}
         />
       )
-    )
+    })
     return choicesToRender
   }
 
@@ -42,18 +43,18 @@ class Choices extends React.PureComponent { // eslint-disable-line react/prefer-
 }
 
 Choices.propTypes = {
-  choices: PropTypes.array.isRequired,
+  options: PropTypes.object.isRequired,
   navigateToStitch: PropTypes.func.isRequired
 }
 
 const mapStateToProps = createStructuredSelector({
-  Choices: makeSelectChoices()
+  options: selectOptions()
 })
 
 function mapDispatchToProps(dispatch) {
   return {
     navigateToStitch: stitchName => {
-      dispatch(setCurrentStitch(stitchName))
+      dispatch(setCurrentContext(stitchName))
     }
   }
 }

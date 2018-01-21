@@ -8,7 +8,7 @@ import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
 import { selectStoryTitle, selectInitialStitchName, getVolume } from 'containers/Game/selectors'
-import { setCurrentStitch } from 'containers/Game/actions'
+import { setCurrentContext } from 'containers/Game/actions'
 import { setPlayingSound } from 'containers/App/actions'
 
 export class TitlePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
@@ -54,7 +54,7 @@ function mapDispatchToProps(dispatch) {
   return {
     onStartClick: stitchName => {
       dispatch(setPlayingSound('doinkLo'))
-      dispatch(setCurrentStitch(stitchName))
+      dispatch(setCurrentContext(stitchName))
     }
   }
 }
