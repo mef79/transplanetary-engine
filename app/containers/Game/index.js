@@ -11,7 +11,7 @@ import { createStructuredSelector } from 'reselect'
 import { selectCurrentStitch } from './selectors'
 import { makeDecision } from './actions'
 
-import Stitch from 'containers/Stitch'
+import StitchContainer from 'containers/StitchContainer'
 import TitlePage from 'containers/TitlePage'
 import Menu from 'containers/Menu'
 
@@ -26,7 +26,7 @@ export class Game extends React.PureComponent { // eslint-disable-line react/pre
     return (
       <div>
         <Menu />
-        { this.props.currentStitch ? <Stitch /> : <TitlePage /> }
+        { this.props.currentStitch ? <StitchContainer /> : <TitlePage /> }
       </div>
     )
   }

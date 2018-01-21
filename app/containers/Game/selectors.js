@@ -1,4 +1,5 @@
 import { createSelector } from 'reselect'
+import { fromJS } from 'immutable'
 
 /**
  * Direct selector to the game state domain
@@ -43,20 +44,19 @@ const getVolume = () => createSelector(
   gameDomain => gameDomain.get('volume')
 )
 
-const getVisibleStitches = startingStitchName => createSelector(
+const getVisibleStitches = () => createSelector(
   selectGameDomain(),
   gameDomain => {
     const storyData = gameDomain.get('storyData').get('data')
-    let current = storyData.get('storyData').get('data').get('stitches').get(startingStitchName).toJS()
+    let current = gameDomain.get('currentStitch').toJS()
     const visibleStitches = [current]
     let options = getOptions(current)
-    let divert = getDivert(current)
-
+    let divert = getDivert(current) ? storyData.get('stitches').get(getDivert(current)).toJS() : undefined
     // meaning there was a divert and not some options
     while (options.length === 0) {
       current = divert
-      visibleStitches.append(current)
-      divert = getDivert(current)
+      visibleStitches.concat(current)
+      divert = getDivert(current) ? storyData.get('stitches').get(getDivert(current)).toJS() : undefined
       options = getOptions(current)
     }
 
@@ -64,11 +64,12 @@ const getVisibleStitches = startingStitchName => createSelector(
 
     // also this needs to track flags/counters
 
-    return visibleStitches
+    return fromJS(visibleStitches)
   }
 )
 
 const getOptions = stitch => {
+  if(stitch.toJS) stitch = stitch.toJS()
   const options = []
   stitch.content.forEach(element => {
     if (element.option) {
@@ -79,12 +80,14 @@ const getOptions = stitch => {
 }
 
 const getDivert = stitch => {
+  if(stitch.toJS) stitch = stitch.toJS()
+  let divert
   stitch.content.forEach(element => {
     if (element.divert) {
-      return element.divert
+      divert = element.divert
     }
   })
-  return undefined
+  return divert
 }
 
 /*
