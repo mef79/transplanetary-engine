@@ -9,37 +9,42 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
-import { getVisibleStitches } from 'containers/Game/selectors'
+import { selectVisibleStitches } from 'containers/Game/selectors'
 import Stitch from 'containers/Stitch'
+import Choices from 'containers/Choices'
 // import { selectors } from './selectors'
 
 class StitchContainer extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   renderStitches = () => {
-    let renderedStitches = []
+    const renderedStitches = []
     let index = 0
-    this.props.visibleStitches.forEach(stitch => renderedStitches.push(<Stitch key={index++} stitch={stitch}/>))
+    this.props.visibleStitches.forEach(stitch =>
+      renderedStitches.push(<Stitch key={index++} stitch={stitch} />)
+    )
     return renderedStitches
   }
 
   render() {
     return (
       <div>
-        {this.renderStitches()}
+        { this.renderStitches() }
+        <Choices />
       </div>
     )
   }
 }
 
 StitchContainer.propTypes = {
-  // specify proptypes here
+  visibleStitches: PropTypes.object.isRequired,
 }
 
 const mapStateToProps = createStructuredSelector({
-  visibleStitches: getVisibleStitches(),
+  visibleStitches: selectVisibleStitches(),
 })
 
 function mapDispatchToProps(dispatch) {
   return {
+    dispatch
     // nameOfFunctionToCall: inputName => dispatch(nameOfAction()),
   }
 }

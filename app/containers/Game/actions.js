@@ -7,7 +7,7 @@
 import {
   DEFAULT_ACTION,
   MAKE_DECISION,
-  SET_CURRENT_STITCH,
+  SET_CURRENT_CONTEXT,
 } from './constants'
 
 export function defaultAction() {
@@ -22,9 +22,9 @@ export function makeDecision() {
   }
 }
 
-export function setCurrentStitch(stitchName) {
+export function setCurrentContext(stitchName) {
   return {
-    type: SET_CURRENT_STITCH,
+    type: SET_CURRENT_CONTEXT,
     stitchName
   }
 }
