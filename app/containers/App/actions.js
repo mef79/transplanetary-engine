@@ -5,32 +5,10 @@
  */
 
 import {
-  SET_SAVED_DATA,
-  SAVE_DATA,
-  SET_COOKIES,
   PLAY_SOUND,
   SET_PLAYING_SOUND,
   SET_VOLUME,
 } from './constants'
-
-export function setSavedData() {
-  return {
-    type: SET_SAVED_DATA,
-  }
-}
-
-export function saveData() {
-  return {
-    type: SAVE_DATA
-  }
-}
-
-export function setCookies(cookies) {
-  return {
-    type: SET_COOKIES,
-    cookies
-  }
-}
 
 export function playSound(sound, volume) {
   return {

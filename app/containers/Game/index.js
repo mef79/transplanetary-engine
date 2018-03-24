@@ -9,7 +9,7 @@ import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
 
 import { selectCurrentStitch } from './selectors'
-import { makeDecision } from './actions'
+import { loadFromLocalStorage } from './actions'
 
 import StitchContainer from 'containers/StitchContainer'
 import TitlePage from 'containers/TitlePage'
@@ -17,9 +17,7 @@ import Menu from 'containers/Menu'
 
 export class Game extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   componentWillMount() {
-    // TODO: this will gotta go somewhere else, but a thing needs to fire when a decision is made
-    // update App/sagas so that it watches for the function that replaces this
-    this.props.makeDecision()
+    this.props.loadFromLocalStorage()
   }
 
   render() {
@@ -33,8 +31,8 @@ export class Game extends React.PureComponent { // eslint-disable-line react/pre
 }
 
 Game.propTypes = {
-  makeDecision: PropTypes.func.isRequired,
   currentStitch: PropTypes.object,
+  loadFromLocalStorage: PropTypes.func,
 }
 
 const mapStateToProps = createStructuredSelector({
@@ -43,7 +41,7 @@ const mapStateToProps = createStructuredSelector({
 
 function mapDispatchToProps(dispatch) {
   return {
-    makeDecision: () => dispatch(makeDecision())
+    loadFromLocalStorage: () => dispatch(loadFromLocalStorage())
   }
 }
 
