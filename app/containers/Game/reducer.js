@@ -9,6 +9,7 @@ import {
   DEFAULT_ACTION,
   SET_CURRENT_CONTEXT,
   LOAD_FROM_LOCAL_STORAGE,
+  CLEAR_LOCAL_STORAGE,
 } from './constants'
 import storyData from '../../ink/story.json'
 
@@ -120,6 +121,16 @@ function gameReducer(state = initialState, action) {
           .set('flags', fromJS(JSON.parse(localStorage.getItem('flags'))))
       }
       return state
+    case CLEAR_LOCAL_STORAGE:
+      localStorage.removeItem('currentStitch')
+      localStorage.removeItem('visibleStitches')
+      localStorage.removeItem('options')
+      localStorage.removeItem('flags')
+      return state
+        .set('currentStitch', null)
+        .set('visibleStitches', null)
+        .set('options', null)
+        .set('flags', fromJS({}))
     default:
       return state
   }

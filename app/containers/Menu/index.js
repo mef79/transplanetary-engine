@@ -10,7 +10,8 @@ import { createStructuredSelector } from 'reselect'
 import Slider from 'rc-slider'
 import 'rc-slider/assets/index.css'
 import { setVolume } from 'containers/App/actions'
-import * as FontAwesome from 'react-icons/lib/fa'
+import FontAwesomeIcon from '@fortawesome/react-fontawesome'
+import { clearLocalStorage } from 'containers/Game/actions'
 
 export class Menu extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   handleChange = val => {
@@ -20,7 +21,7 @@ export class Menu extends React.PureComponent { // eslint-disable-line react/pre
   render() {
     return (
       <div style={{ height: '30px', backgroundColor: 'gray', paddingRight: '10px', textAlign: 'right' }}>
-        <FontAwesome.FaVolumeUp style={{ verticalAlign: 'top', marginTop: '7px', fill: 'darkgray' }} />
+        <FontAwesomeIcon icon="volume-up" style={{ verticalAlign: 'top', marginTop: '7px', color: 'darkgray' }} />
         <div style={{ display: 'inline-block', width: '300px', padding: '9px' }}>
           <Slider
             trackStyle={{ backgroundColor: 'darkgray' }}
@@ -34,13 +35,19 @@ export class Menu extends React.PureComponent { // eslint-disable-line react/pre
             onChange={this.handleChange}
           />
         </div>
+        <FontAwesomeIcon
+          icon="undo"
+          style={{ color: 'darkgray', verticalAlign: 'top', marginTop: '7px', marginLeft: '20px', cursor: 'pointer' }}
+          onClick={this.props.clearLocalStorage}
+        />
       </div>
     )
   }
 }
 
 Menu.propTypes = {
-  setVolume: PropTypes.func.isRequired
+  setVolume: PropTypes.func.isRequired,
+  clearLocalStorage: PropTypes.func.isRequired,
 }
 
 const mapStateToProps = createStructuredSelector({
@@ -50,7 +57,8 @@ function mapDispatchToProps(dispatch) {
   return {
     setVolume: volume => {
       dispatch(setVolume(volume))
-    }
+    },
+    clearLocalStorage: () => dispatch(clearLocalStorage()),
   }
 }
 
