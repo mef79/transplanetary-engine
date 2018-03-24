@@ -14,7 +14,12 @@ import { setPlayingSound } from 'containers/App/actions'
 export class TitlePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     const Title = styled.h1`
+      text-align: center;
       font-size:1.2em;
+      background-color:#000e;
+      color:white;
+      padding:1em;
+      width:100%;
     `
     const PageLayout = styled.div`
       display: flex;

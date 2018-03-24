@@ -2,6 +2,12 @@ import { injectGlobal } from 'styled-components'
 
 /* eslint no-unused-expressions: 0 */
 injectGlobal`
+
+@font-face {
+  font-family: StellarMedium;
+  src: url("fonts/Stellar-Medium.otf") format("opentype");
+}
+
   @import url('https://fonts.googleapis.com/css?family=VT323');
   @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
   html,
