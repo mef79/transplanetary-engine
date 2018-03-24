@@ -8,7 +8,7 @@ import { fromJS } from 'immutable'
 import {
   DEFAULT_ACTION,
   SET_CURRENT_CONTEXT,
-  MAKE_DECISION,
+  LOAD_FROM_LOCAL_STORAGE,
 } from './constants'
 import storyData from '../../ink/story.json'
 
@@ -76,8 +76,6 @@ const mergeFlags = (flags1, flags2) => {
 
 function gameReducer(state = initialState, action) {
   switch (action.type) {
-    case MAKE_DECISION:
-      return state
     case DEFAULT_ACTION:
       return state
     case SET_CURRENT_CONTEXT:
@@ -113,6 +111,15 @@ function gameReducer(state = initialState, action) {
         .set('visibleStitches', fromJS(visibleStitches))
         .set('options', fromJS(options))
         .set('flags', fromJS(flags))
+    case LOAD_FROM_LOCAL_STORAGE:
+      if (localStorage.getItem('currentStitch')) {
+        return state
+          .set('currentStitch', fromJS(JSON.parse(localStorage.getItem('currentStitch'))))
+          .set('visibleStitches', fromJS(JSON.parse(localStorage.getItem('visibleStitches'))))
+          .set('options', fromJS(JSON.parse(localStorage.getItem('options'))))
+          .set('flags', fromJS(JSON.parse(localStorage.getItem('flags'))))
+      }
+      return state
     default:
       return state
   }

@@ -6,8 +6,8 @@
 
 import {
   DEFAULT_ACTION,
-  MAKE_DECISION,
   SET_CURRENT_CONTEXT,
+  LOAD_FROM_LOCAL_STORAGE,
 } from './constants'
 
 export function defaultAction() {
@@ -16,15 +16,15 @@ export function defaultAction() {
   }
 }
 
-export function makeDecision() {
-  return {
-    type: MAKE_DECISION
-  }
-}
-
 export function setCurrentContext(stitchName) {
   return {
     type: SET_CURRENT_CONTEXT,
     stitchName
+  }
+}
+
+export function loadFromLocalStorage() {
+  return {
+    type: LOAD_FROM_LOCAL_STORAGE,
   }
 }

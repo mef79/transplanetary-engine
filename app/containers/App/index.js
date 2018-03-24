@@ -12,19 +12,10 @@
  */
 
 import React, { PropTypes } from 'react'
-import { instanceOf } from 'prop-types'
 import { connect } from 'react-redux'
-import { withCookies, Cookies } from 'react-cookie'
 import { createStructuredSelector } from 'reselect'
-import { setSavedData, setCookies } from './actions'
 
 class App extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
-
-  componentWillMount() {
-    this.props.setSavedData(this.props.cookies.get('savedData'))
-    this.props.setCookies(this.props.cookies)
-  }
-
   render() {
     return (
       <div>
@@ -36,19 +27,14 @@ class App extends React.PureComponent { // eslint-disable-line react/prefer-stat
 
 App.propTypes = {
   children: PropTypes.node,
-  cookies: instanceOf(Cookies).isRequired,
-  setSavedData: PropTypes.func.isRequired,
-  setCookies: PropTypes.func.isRequired,
 }
 
-const mapStateToProps = createStructuredSelector({
-})
+const mapStateToProps = createStructuredSelector({})
 
 function mapDispatchToProps(dispatch) {
   return {
-    setSavedData: savedData => dispatch(setSavedData(savedData)),
-    setCookies: cookies => dispatch(setCookies(cookies)),
+    dispatch
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(withCookies(App))
+export default connect(mapStateToProps, mapDispatchToProps)(App)

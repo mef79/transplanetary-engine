@@ -44,8 +44,6 @@ import './global-styles'
 // Import root routes
 import createRoutes from './routes'
 
-import { CookiesProvider } from 'react-cookie'
-
 // Create redux store with history
 // this uses the singleton browserHistory provided by react-router
 // Optionally, this could be changed to leverage a created history
@@ -70,17 +68,15 @@ const render = messages => {
   ReactDOM.render(
     <Provider store={store}>
       <LanguageProvider messages={messages}>
-        <CookiesProvider>
-          <Router
-            history={history}
-            routes={rootRoute}
-            render={
-              // Scroll to top when going to a new page, imitating default browser
-              // behaviour
-              applyRouterMiddleware(useScroll())
-            }
-          />
-        </CookiesProvider>
+        <Router
+          history={history}
+          routes={rootRoute}
+          render={
+            // Scroll to top when going to a new page, imitating default browser
+            // behaviour
+            applyRouterMiddleware(useScroll())
+          }
+        />
       </LanguageProvider>
     </Provider>,
     document.getElementById('app')

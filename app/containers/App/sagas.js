@@ -1,9 +1,9 @@
 import { takeEvery, takeLatest, put, select } from 'redux-saga/effects'
-import { saveData, playSound, setPlayingSound } from './actions'
-// import { SET_CURRENT_STITCH, MAKE_DECISION } from 'containers/Game/actions'
+import { playSound, setPlayingSound } from './actions'
 import { SET_PLAYING_SOUND } from './constants'
-import { MAKE_DECISION } from 'containers/Game/constants'
+import { SET_CURRENT_CONTEXT } from 'containers/Game/constants'
 import { getVolume, getPlayingSound } from './selectors'
+import { selectGameDomain } from 'containers/Game/selectors'
 
 // Individual exports for testing
 export function* defaultSaga() {
@@ -12,17 +12,16 @@ export function* defaultSaga() {
 
 export function* handleDecisions() {
   // when decisions are made, they must fire an action to update an object containing all decisions
-  yield put(saveData())
-}
-
-export function* handleStitchTransitions() {
-  // when the current stitch gets updated
-  yield put(saveData())
+  const gameData = yield select(selectGameDomain())
+  const gameDataJS = gameData.toJS()
+  localStorage.setItem('visibleStitches', JSON.stringify(gameDataJS.visibleStitches))
+  localStorage.setItem('currentStitch', JSON.stringify(gameDataJS.currentStitch))
+  localStorage.setItem('options', JSON.stringify(gameDataJS.options))
+  localStorage.setItem('flags', JSON.stringify(gameDataJS.flags))
 }
 
 export function* watchForSaveActions() {
-  yield takeEvery(MAKE_DECISION, handleDecisions)
-  // yield takeEvery(SET_CURRENT_STITCH, handleStitchTransitions)
+  yield takeEvery(SET_CURRENT_CONTEXT, handleDecisions)
 }
 
 function* handleSound() {
