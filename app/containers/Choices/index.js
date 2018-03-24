@@ -13,6 +13,15 @@ import Choice from 'components/Choice'
 
 class Choices extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 
+  choiceList = {
+    listStyle : 'none',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'space-between',
+    justifyContent: 'center',
+    width: '100%'
+  }
+
   renderChoices = () => {
     const choicesToRender = []
     this.props.options.forEach(choice => {
@@ -34,9 +43,9 @@ class Choices extends React.PureComponent { // eslint-disable-line react/prefer-
   render() {
     return (
       <div>
-        <ul>
+        <div style={this.choiceList}>
           {this.renderChoices()}
-        </ul>
+        </div>
       </div>
     )
   }

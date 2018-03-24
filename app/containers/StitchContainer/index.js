@@ -15,6 +15,24 @@ import Choices from 'containers/Choices'
 // import { selectors } from './selectors'
 
 class StitchContainer extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+
+  greyBox = {
+    backgroundColor:'#000e',
+    color:'white',
+    padding:'1em',
+    width:'90%',
+    margin: '1em'
+
+  }
+
+  container = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    height: '95.5vh',
+    margin: '1em'
+  }
+
   renderStitches = () => {
     const renderedStitches = []
     let index = 0
@@ -26,9 +44,14 @@ class StitchContainer extends React.PureComponent { // eslint-disable-line react
 
   render() {
     return (
-      <div>
-        { this.renderStitches() }
-        <Choices />
+      <div style={this.container}>
+        <div style={this.greyBox}>
+          { this.renderStitches() }
+        </div>
+        <div style={{width:'90%'}}>
+
+          <Choices />
+        </div>
       </div>
     )
   }
