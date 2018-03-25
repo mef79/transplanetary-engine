@@ -15,7 +15,6 @@ import { setPlayingSound } from 'containers/App/actions'
 class Choices extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 
   choiceList = {
-    listStyle: 'none',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'space-between',

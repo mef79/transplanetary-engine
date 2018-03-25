@@ -12,26 +12,10 @@ import { createStructuredSelector } from 'reselect'
 import { selectVisibleStitches } from 'containers/Game/selectors'
 import Stitch from 'containers/Stitch'
 import Choices from 'containers/Choices'
-// import { selectors } from './selectors'
+import SciFiBackground from 'images/scifibackground.jpg'
+import styled from 'styled-components'
 
 class StitchContainer extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
-
-  greyBox = {
-    backgroundColor:'#000e',
-    color:'white',
-    padding:'1em',
-    width:'90%',
-    margin: '1em'
-
-  }
-
-  container = {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    height: '95.5vh',
-    margin: '1em'
-  }
 
   renderStitches = () => {
     const renderedStitches = []
@@ -43,16 +27,31 @@ class StitchContainer extends React.PureComponent { // eslint-disable-line react
   }
 
   render() {
+    const GreyBox = styled.div`
+    background-color: #000b;
+    color: white;
+    padding: 1em;
+    width: 90%;
+    margin: 1em;
+    `
+    const Container = styled.div`
+    background: url(${SciFiBackground}) no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flexDirection: column;
+    alignItems: center;
+    height: 95.5vh;
+    margin: 1em;
+    `
     return (
-      <div style={this.container}>
-        <div style={this.greyBox}>
+      <Container>
+        <GreyBox>
           { this.renderStitches() }
-        </div>
-        <div style={{width:'90%'}}>
-
+        </GreyBox>
+        <div style={ { width: '90%' } }>
           <Choices />
         </div>
-      </div>
+      </Container>
     )
   }
 }
