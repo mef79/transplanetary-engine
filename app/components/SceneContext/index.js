@@ -12,7 +12,7 @@ import BackgroundWrapper from 'components/BackgroundWrapper'
 class SceneContext extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
-      <div style={{height: 100+'vh'}}>
+      <div style={ { height: '100vh' } }>
         <Music />
         <BackgroundWrapper>
           <Scene />

@@ -22,7 +22,7 @@ export class Game extends React.PureComponent { // eslint-disable-line react/pre
 
   render() {
     return (
-      <div style={{height:'100vh'}}  >
+      <div style={ { height: '100vh' } }>
         <Menu />
         { this.props.currentStitch ? <StitchContainer /> : <TitlePage /> }
       </div>
