@@ -12,7 +12,6 @@ import { createStructuredSelector } from 'reselect'
 import { selectVisibleStitches } from 'containers/Game/selectors'
 import Stitch from 'containers/Stitch'
 import Choices from 'containers/Choices'
-import SciFiBackground from 'images/scifibackground.jpg'
 import styled from 'styled-components'
 
 class StitchContainer extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
@@ -35,13 +34,9 @@ class StitchContainer extends React.PureComponent { // eslint-disable-line react
     margin: 1em;
     `
     const Container = styled.div`
-    background: url(${SciFiBackground}) no-repeat center center fixed;
-    background-size: cover;
     display: flex;
     flexDirection: column;
     alignItems: center;
-    height: 95.5vh;
-    margin: 1em;
     `
     return (
       <Container>
