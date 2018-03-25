@@ -27,7 +27,7 @@ class Choice extends React.PureComponent { // eslint-disable-line react/prefer-s
   }
 
   render() {
-    const GreyBox = styled.div`
+    const GrayBox = styled.div`
       background-color: #000b;
       color: white;
       padding: 1em;
@@ -36,7 +36,7 @@ class Choice extends React.PureComponent { // eslint-disable-line react/prefer-s
       margin-bottom: 10px;
     `
     return (
-      <GreyBox
+      <GrayBox
         onClick={this.props.clickFunc}
         dangerouslySetInnerHTML={{ __html: this.formatStitchContent(this.props.choice.option) }}
       />
