@@ -26,7 +26,7 @@ class StitchContainer extends React.PureComponent { // eslint-disable-line react
   }
 
   render() {
-    const GreyBox = styled.div`
+    const GrayBox = styled.div`
     background-color: #000b;
     color: white;
     padding: 1em;
@@ -40,9 +40,9 @@ class StitchContainer extends React.PureComponent { // eslint-disable-line react
     `
     return (
       <Container>
-        <GreyBox>
+        <GrayBox>
           { this.renderStitches() }
-        </GreyBox>
+        </GrayBox>
         <div style={ { width: '90%' } }>
           <Choices />
         </div>

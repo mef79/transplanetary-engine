@@ -27,6 +27,15 @@ export class TitlePage extends React.PureComponent { // eslint-disable-line reac
       align-items: center;
       justify-content: space-around;
     `
+    const GrayBox = styled.div`
+      background-color: #000b;
+      color: white;
+      padding: 1em;
+      width: 90%;
+      margin: 1em;
+      margin-bottom: 10px;
+      text-align: center;
+    `
     const onStartButtonClick = () => {
       this.props.onStartClick(this.props.initialStitchName)
     }
@@ -35,9 +44,9 @@ export class TitlePage extends React.PureComponent { // eslint-disable-line reac
         <Title>
           {this.props.title}
         </Title>
-        <button onClick={onStartButtonClick}>
+        <GrayBox onClick={onStartButtonClick}>
           Start Game
-        </button>
+        </GrayBox>
       </PageLayout>
     )
   }
