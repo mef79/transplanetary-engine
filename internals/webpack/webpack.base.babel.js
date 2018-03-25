@@ -30,13 +30,8 @@ module.exports = options => ({
       test: /\.(mp3)$/,
       loader: 'file-loader',
     }, {
-      test: /\.(eot|svg|ttf|woff|woff2|otf)$/,
-      loader: 'url-loader',
-      options: {
-        name: './fonts/[name].[ext]',
-        mimetype: 'application/font-otf',
-        publicPath: '../'
-      }
+      test: /\.(otf)$/,
+      loader: 'file-loader',
     }, {
       test: /\.(jpg|png|gif)$/,
       loaders: [

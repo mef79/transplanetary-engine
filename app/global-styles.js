@@ -1,11 +1,12 @@
 import { injectGlobal } from 'styled-components'
+import StellarMedium from 'fonts/Stellar-Medium.otf'
 
 /* eslint no-unused-expressions: 0 */
 injectGlobal`
 
 @font-face {
   font-family: StellarMedium;
-  src: url("fonts/Stellar-Medium.otf") format("opentype");
+  src: url(${StellarMedium}) format("opentype");
 }
 
   @import url('https://fonts.googleapis.com/css?family=VT323');
@@ -17,7 +18,7 @@ injectGlobal`
   }
 
   body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: StellarMedium, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
 
   body.fontLoaded {
