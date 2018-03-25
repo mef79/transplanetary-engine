@@ -33,9 +33,9 @@ module.exports = options => ({
       test: /\.(eot|svg|ttf|woff|woff2|otf)$/,
       loader: 'url-loader',
       options: {
-        name: "./fonts/[name].[ext]",
-        mimetype: "application/font-otf",
-        publicPath: "../"
+        name: './fonts/[name].[ext]',
+        mimetype: 'application/font-otf',
+        publicPath: '../'
       }
     }, {
       test: /\.(jpg|png|gif)$/,

@@ -1,9 +1,9 @@
-import { createSelector } from 'reselect'
+// import { createSelector } from 'reselect'
 
 /**
  * Direct selector to the stitchContainer state domain
  */
-const selectStitchContainerDomain = () => state => state.get('stitchContainer')
+// const selectStitchContainerDomain = () => state => state.get('stitchContainer')
 
 /**
  * Other specific selectors
@@ -17,9 +17,9 @@ const selectStitchContainerDomain = () => state => state.get('stitchContainer')
 // const selectThingFromStore = () => createSelector(
 //  selectStitchContainerDomain(),
 //  (substate) => substate.get('nameOfThingInStore')
-//)
+// )
 
 // uncomment this once there's a selector to put in it
 // export {
 //  selectStitchContainerDomain,
-//}
+// }
