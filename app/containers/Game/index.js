@@ -7,6 +7,7 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
+import styled from 'styled-components'
 
 import { selectCurrentStitch } from './selectors'
 import { loadFromLocalStorage } from './actions'
@@ -14,6 +15,7 @@ import { loadFromLocalStorage } from './actions'
 import StitchContainer from 'containers/StitchContainer'
 import TitlePage from 'containers/TitlePage'
 import Menu from 'containers/Menu'
+import SciFiBackground from 'images/scifibackground.jpg'
 
 export class Game extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   componentWillMount() {
@@ -21,11 +23,16 @@ export class Game extends React.PureComponent { // eslint-disable-line react/pre
   }
 
   render() {
+    const Container = styled.div`
+    background: url(${SciFiBackground}) no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    `
     return (
-      <div style={ { height: '100vh' } }>
+      <Container>
         <Menu />
         { this.props.currentStitch ? <StitchContainer /> : <TitlePage /> }
-      </div>
+      </Container>
     )
   }
 }
