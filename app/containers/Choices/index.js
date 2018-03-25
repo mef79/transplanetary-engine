@@ -10,11 +10,12 @@ import { createStructuredSelector } from 'reselect'
 import { setCurrentContext } from 'containers/Game/actions'
 import { selectOptions } from 'containers/Game/selectors'
 import Choice from 'components/Choice'
+import { setPlayingSound } from 'containers/App/actions'
 
 class Choices extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 
   choiceList = {
-    listStyle : 'none',
+    listStyle: 'none',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'space-between',
@@ -64,6 +65,7 @@ function mapDispatchToProps(dispatch) {
   return {
     navigateToStitch: stitchName => {
       dispatch(setCurrentContext(stitchName))
+      dispatch(setPlayingSound('doinkLo'))
     }
   }
 }
