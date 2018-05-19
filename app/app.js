@@ -18,7 +18,6 @@ import { useScroll } from 'react-router-scroll'
 import 'sanitize.css/sanitize.css'
 import fontawesome from '@fortawesome/fontawesome'
 import faUndo from '@fortawesome/fontawesome-free-solid/faUndo'
-import faVolumeUp from '@fortawesome/fontawesome-free-solid/faVolumeUp'
 
 // Import root app
 import App from 'containers/App'
@@ -47,7 +46,7 @@ import './global-styles'
 // Import root routes
 import createRoutes from './routes'
 
-fontawesome.library.add(faUndo, faVolumeUp)
+fontawesome.library.add(faUndo)
 
 // Create redux store with history
 // this uses the singleton browserHistory provided by react-router

@@ -7,7 +7,7 @@ import styled from 'styled-components'
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
-import { selectStoryTitle, selectInitialStitchName, getVolume } from 'containers/Game/selectors'
+import { selectStoryTitle, selectInitialStitchName } from 'containers/Game/selectors'
 import { setCurrentContext } from 'containers/Game/actions'
 import { setPlayingSound } from 'containers/App/actions'
 
@@ -61,7 +61,6 @@ TitlePage.propTypes = {
 const mapStateToProps = createStructuredSelector({
   title: selectStoryTitle(),
   initialStitchName: selectInitialStitchName(),
-  volume: getVolume(),
 })
 
 function mapDispatchToProps(dispatch) {
