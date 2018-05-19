@@ -14,6 +14,7 @@ import Stitch from 'containers/Stitch'
 import Choices from 'containers/Choices'
 import styled from 'styled-components'
 import { selectImage } from 'containers/Game/selectors'
+import PortraitImage from 'components/PortraitImage'
 
 class StitchContainer extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 
@@ -41,7 +42,7 @@ class StitchContainer extends React.PureComponent { // eslint-disable-line react
     `
     return (
       <Container>
-        <img src={ this.props.imageUrl }/>
+        <PortraitImage imageUrl= {this.props.imageUrl} />
         <GrayBox>
           { this.renderStitches() }
         </GrayBox>
