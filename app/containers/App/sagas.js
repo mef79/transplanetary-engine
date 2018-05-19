@@ -2,7 +2,7 @@ import { takeEvery, takeLatest, put, select } from 'redux-saga/effects'
 import { playSound, setPlayingSound } from './actions'
 import { SET_PLAYING_SOUND } from './constants'
 import { SET_CURRENT_CONTEXT } from 'containers/Game/constants'
-import { getVolume, getPlayingSound } from './selectors'
+import { getPlayingSound } from './selectors'
 import { selectGameDomain } from 'containers/Game/selectors'
 
 // Individual exports for testing
@@ -26,10 +26,9 @@ export function* watchForSaveActions() {
 }
 
 function* handleSound() {
-  const volume = yield select(getVolume())
   const sound = yield select(getPlayingSound())
   if (sound) {
-    yield put(playSound(sound, volume))
+    yield put(playSound(sound))
     yield put(setPlayingSound(undefined))
   }
 }

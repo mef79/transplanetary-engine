@@ -7,13 +7,12 @@
 import {
   PLAY_SOUND,
   SET_PLAYING_SOUND,
-  SET_VOLUME,
 } from './constants'
 
-export function playSound(sound, volume) {
+export function playSound(sound) {
   return {
     type: PLAY_SOUND,
-    meta: { sound: `${sound}_volume_${volume.toString()}` }
+    meta: { sound }
   }
 }
 
@@ -21,12 +20,5 @@ export function setPlayingSound(sound) {
   return {
     type: SET_PLAYING_SOUND,
     sound,
-  }
-}
-
-export function setVolume(volume) {
-  return {
-    type: SET_VOLUME,
-    volume,
   }
 }

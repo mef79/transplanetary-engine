@@ -20,11 +20,6 @@ const selectCurrentStitch = () => createSelector(
   gameDomain => gameDomain.get('currentStitch')
 )
 
-const getVolume = () => createSelector(
-  selectGameDomain(),
-  gameDomain => gameDomain.get('volume')
-)
-
 const selectVisibleStitches = () => createSelector(
   selectGameDomain(),
   gameDomain => gameDomain.get('visibleStitches')
@@ -50,7 +45,6 @@ export {
   selectStoryTitle,
   selectInitialStitchName,
   selectCurrentStitch,
-  getVolume,
   selectVisibleStitches,
   selectOptions,
   selectFlags,

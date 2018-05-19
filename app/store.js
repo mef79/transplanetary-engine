@@ -14,18 +14,9 @@ const sagaMiddleware = createSagaMiddleware()
 
 export default function configureStore(initialState = {}, history) {
   // Our soundsData is an object. The keys are the names of our sounds.
-  const soundNameToFile = {
+  const allSounds = {
     doinkLo: doinkloFile
   }
-  const allSounds = {}
-  Object.keys(soundNameToFile).forEach(soundName => {
-    for (let i = 1; i <= 10; i++) {
-      allSounds[`${soundName}_volume_${i.toString()}`] = {
-        urls: [soundNameToFile[soundName]],
-        volume: i / 10.0
-      }
-    }
-  })
 
   // Create the store with two middlewares
   // 1. sagaMiddleware: Makes redux-sagas work
