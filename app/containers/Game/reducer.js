@@ -19,6 +19,18 @@ const initialState = fromJS({
   flags: {}
 })
 
+const getImage = stitch =>{
+  let imageUrl
+  stitch.content.some(element => {
+    if(element.image){
+      imageUrl = element.image
+      //imageUrl = 'https://picsum.photos/200/300.jpg'
+      return true
+    }
+  })
+  return imageUrl
+}
+
 const getOptions = stitch => {
   const options = []
   stitch.content.forEach(element => {
@@ -89,6 +101,9 @@ function gameReducer(state = initialState, action) {
       // start with just the current stitch visible
       const visibleStitches = [current]
 
+      //get portrait image associated with stitch
+      let image = getImage(current)
+
       // keep track of this object's flags
       let flags = mergeFlags(state.get('flags').toJS(), getFlags(current))
 
@@ -110,6 +125,7 @@ function gameReducer(state = initialState, action) {
       return state
         .set('currentStitch', fromJS(stitches[action.stitchName]))
         .set('visibleStitches', fromJS(visibleStitches))
+        .set('image', fromJS(image))
         .set('options', fromJS(options))
         .set('flags', fromJS(flags))
     case LOAD_FROM_LOCAL_STORAGE:

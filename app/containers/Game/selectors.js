@@ -40,6 +40,11 @@ const selectFlags = () => createSelector(
   gameDomain => gameDomain.get('flags')
 )
 
+const selectImage = () => createSelector(
+  selectGameDomain(),
+  gameDomain => gameDomain.get('image')
+)
+
 export {
   selectGameDomain,
   selectStoryTitle,
@@ -49,4 +54,5 @@ export {
   selectVisibleStitches,
   selectOptions,
   selectFlags,
+  selectImage,
 }

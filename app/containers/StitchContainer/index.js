@@ -13,6 +13,7 @@ import { selectVisibleStitches } from 'containers/Game/selectors'
 import Stitch from 'containers/Stitch'
 import Choices from 'containers/Choices'
 import styled from 'styled-components'
+import { selectImage } from 'containers/Game/selectors'
 
 class StitchContainer extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 
@@ -40,6 +41,7 @@ class StitchContainer extends React.PureComponent { // eslint-disable-line react
     `
     return (
       <Container>
+        <img src={ this.imageUrl }/>
         <GrayBox>
           { this.renderStitches() }
         </GrayBox>
@@ -57,6 +59,7 @@ StitchContainer.propTypes = {
 
 const mapStateToProps = createStructuredSelector({
   visibleStitches: selectVisibleStitches(),
+  imageUrl: selectImage(),
 })
 
 function mapDispatchToProps(dispatch) {
