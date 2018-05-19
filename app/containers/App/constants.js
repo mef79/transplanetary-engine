@@ -12,4 +12,3 @@
 export const DEFAULT_LOCALE = 'en'
 export const SET_PLAYING_SOUND = 'app/SET_PLAYING_SOUND'
 export const PLAY_SOUND = 'app/PLAY_SOUND'
-export const SET_VOLUME = 'app/SET_VOLUME'
