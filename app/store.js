@@ -9,13 +9,23 @@ import createSagaMiddleware from 'redux-saga'
 import createReducer from './reducers'
 import soundsMiddleware from 'redux-sounds'
 import doinkloFile from 'music/doinklo.mp3'
+import mainThemeFile from 'music/main.ogg'
+import endThemeFile from 'music/end.ogg'
 
 const sagaMiddleware = createSagaMiddleware()
 
 export default function configureStore(initialState = {}, history) {
   // Our soundsData is an object. The keys are the names of our sounds.
   const allSounds = {
-    doinkLo: doinkloFile
+    doinkLo: doinkloFile,
+    mainTheme: {
+      urls: [mainThemeFile],
+      loop: true,
+    },
+    endTheme: {
+      urls: [endThemeFile],
+      loop: true,
+    },
   }
 
   // Create the store with two middlewares

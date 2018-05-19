@@ -112,6 +112,7 @@ function gameReducer(state = initialState, action) {
         .set('visibleStitches', fromJS(visibleStitches))
         .set('options', fromJS(options))
         .set('flags', fromJS(flags))
+
     case LOAD_FROM_LOCAL_STORAGE:
       if (localStorage.getItem('currentStitch')) {
         return state
@@ -121,6 +122,7 @@ function gameReducer(state = initialState, action) {
           .set('flags', fromJS(JSON.parse(localStorage.getItem('flags'))))
       }
       return state
+
     case CLEAR_LOCAL_STORAGE:
       localStorage.removeItem('currentStitch')
       localStorage.removeItem('visibleStitches')

@@ -19,12 +19,18 @@ const makeSelectLocationState = () => {
   }
 }
 
-const getPlayingSound = () => createSelector(
+const getPlayingSFX = () => createSelector(
   selectAppDomain(),
-  appDomain => appDomain.get('playingSound')
+  appDomain => appDomain.get('playingSFX')
+)
+
+const getPlayingMusic = () => createSelector(
+  selectAppDomain(),
+  appDomain => appDomain.get('playingMusic')
 )
 
 export {
   makeSelectLocationState,
-  getPlayingSound,
+  getPlayingSFX,
+  getPlayingMusic,
 }
