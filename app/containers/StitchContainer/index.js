@@ -42,7 +42,7 @@ class StitchContainer extends React.PureComponent { // eslint-disable-line react
     `
     return (
       <Container>
-        <PortraitImage imageUrl= {this.props.imageUrl} />
+         <PortraitImage imageUrl = {this.props.imageUrl} />
         <GrayBox>
           { this.renderStitches() }
         </GrayBox>
