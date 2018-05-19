@@ -21,13 +21,14 @@ const initialState = fromJS({
 
 const getImage = stitch =>{
   let imageUrl
-  stitch.content.some(element => {
-    if(element.image){
-      imageUrl = element.image
-      //imageUrl = 'https://picsum.photos/200/300.jpg'
-      return true
-    }
-  })
+  if(stitch) {
+    stitch.content.some(element => {
+      if(element.image){
+        imageUrl = element.image
+        return true
+      }
+    })
+  }
   return imageUrl
 }
 
@@ -113,26 +114,36 @@ function gameReducer(state = initialState, action) {
       let divert = getDivert(current) ? stitches[getDivert(current)] : undefined
 
       // there was a divert, so we go get the next one until we run into a set of options
-      while (options.length === 0) {
+      while (divert && options.length === 0) {
         current = divert
         visibleStitches.push(current)
+        image = getImage(current) ? getImage(current) : image
         divert = getDivert(current) ? stitches[getDivert(current)] : undefined
         options = getOptions(current)
         flags = mergeFlags(flags, getFlags(current))
       }
 
       // also this needs to track flags/counters
+      if(image){
       return state
         .set('currentStitch', fromJS(stitches[action.stitchName]))
         .set('visibleStitches', fromJS(visibleStitches))
         .set('image', fromJS(image))
         .set('options', fromJS(options))
         .set('flags', fromJS(flags))
+      } else {
+        return state
+        .set('currentStitch', fromJS(stitches[action.stitchName]))
+        .set('visibleStitches', fromJS(visibleStitches))
+        .set('options', fromJS(options))
+        .set('flags', fromJS(flags))
+      }
     case LOAD_FROM_LOCAL_STORAGE:
       if (localStorage.getItem('currentStitch')) {
         return state
           .set('currentStitch', fromJS(JSON.parse(localStorage.getItem('currentStitch'))))
           .set('visibleStitches', fromJS(JSON.parse(localStorage.getItem('visibleStitches'))))
+          .set('image', fromJS(JSON.parse(localStorage.getItem('image'))))
           .set('options', fromJS(JSON.parse(localStorage.getItem('options'))))
           .set('flags', fromJS(JSON.parse(localStorage.getItem('flags'))))
       }
@@ -140,11 +151,13 @@ function gameReducer(state = initialState, action) {
     case CLEAR_LOCAL_STORAGE:
       localStorage.removeItem('currentStitch')
       localStorage.removeItem('visibleStitches')
+      localStorage.removeItem('image')
       localStorage.removeItem('options')
       localStorage.removeItem('flags')
       return state
         .set('currentStitch', null)
         .set('visibleStitches', null)
+        .set('image', null)
         .set('options', null)
         .set('flags', fromJS({}))
     default:
