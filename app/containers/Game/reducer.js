@@ -19,14 +19,15 @@ const initialState = fromJS({
   flags: {}
 })
 
-const getImage = stitch =>{
+const getImage = stitch => {
   let imageUrl
-  if(stitch) {
+  if (stitch) {
     stitch.content.some(element => {
-      if(element.image){
+      if (element.image) {
         imageUrl = element.image
         return true
       }
+      return false
     })
   }
   return imageUrl
@@ -102,7 +103,7 @@ function gameReducer(state = initialState, action) {
       // start with just the current stitch visible
       const visibleStitches = [current]
 
-      //get portrait image associated with stitch
+      // get portrait image associated with stitch
       let image = getImage(current)
 
       // keep track of this object's flags
@@ -124,20 +125,20 @@ function gameReducer(state = initialState, action) {
       }
 
       // also this needs to track flags/counters
-      if(image){
-      return state
+      if (image) {
+        return state
         .set('currentStitch', fromJS(stitches[action.stitchName]))
         .set('visibleStitches', fromJS(visibleStitches))
         .set('image', fromJS(image))
         .set('options', fromJS(options))
         .set('flags', fromJS(flags))
-      } else {
-        return state
+      }
+      return state
         .set('currentStitch', fromJS(stitches[action.stitchName]))
         .set('visibleStitches', fromJS(visibleStitches))
         .set('options', fromJS(options))
         .set('flags', fromJS(flags))
-      }
+
     case LOAD_FROM_LOCAL_STORAGE:
       if (localStorage.getItem('currentStitch')) {
         return state
