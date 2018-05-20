@@ -30,24 +30,47 @@ class StitchContainer extends React.PureComponent { // eslint-disable-line react
     const GrayBox = styled.div`
     background-color: #000b;
     color: white;
-    padding: 1em;
-    width: 90%;
-    margin: 1em;
+    padding: .3em;
+    width: 95%;
+    margin-top: .5em;
+    margin-bottom: .5em;
+    max-height:30vh;
+    overflow:auto;
     `
     const Container = styled.div`
     display: flex;
     flexDirection: column;
     alignItems: center;
+    height: 96.5vh
+    `
+    const OtherContainer = styled.div`
+    display: flex;
+    flexDirection: column;
+    alignItems: center;
+    justify-content: space-around;
+    `
+    const PortraitContainer = styled.div`
+    min-height:50vh;
+    max-height:50vh;
+    overflow:hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin: 1em;
     `
     return (
       <Container>
-        <PortraitImage imageUrl={this.props.imageUrl} />
-        <GrayBox>
-          { this.renderStitches() }
-        </GrayBox>
-        <div style={ { width: '90%' } }>
-          <Choices />
-        </div>
+        <PortraitContainer>
+          <PortraitImage imageUrl={this.props.imageUrl} />
+        </PortraitContainer>
+        <OtherContainer>
+          <GrayBox>
+            {this.renderStitches()}
+          </GrayBox>
+          <div style={{ width: '90%' }}>
+            <Choices />
+          </div>
+        </OtherContainer>
       </Container>
     )
   }

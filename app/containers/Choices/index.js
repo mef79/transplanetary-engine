@@ -17,9 +17,8 @@ class Choices extends React.PureComponent { // eslint-disable-line react/prefer-
   choiceList = {
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'space-between',
     justifyContent: 'center',
-    width: '100%'
+    alignItems: 'center',
   }
 
   renderChoices = () => {
@@ -42,10 +41,8 @@ class Choices extends React.PureComponent { // eslint-disable-line react/prefer-
 
   render() {
     return (
-      <div>
-        <div style={this.choiceList}>
-          {this.renderChoices()}
-        </div>
+      <div style={this.choiceList}>
+        {this.renderChoices()}
       </div>
     )
   }

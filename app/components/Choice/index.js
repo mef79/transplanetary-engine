@@ -30,10 +30,11 @@ class Choice extends React.PureComponent { // eslint-disable-line react/prefer-s
     const GrayBox = styled.div`
       background-color: #000b;
       color: white;
-      padding: 1em;
-      width: 90%;
-      margin: 1em;
+      padding: .3em;
+      min-width: 30%;
+
       margin-bottom: 10px;
+      text-align: center;
     `
     return (
       <GrayBox
