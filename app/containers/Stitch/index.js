@@ -73,7 +73,7 @@ export class Stitch extends React.PureComponent { // eslint-disable-line react/p
 
   render() {
     return (
-      <div id="stitchContent">
+      <div className="stitchContent">
         <TextFormatter content={this.setFlagBasedSnippets(this.props.stitch.get('content').get(0))} />
       </div>
     )
