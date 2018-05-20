@@ -9,9 +9,13 @@ import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
 import { selectStoryTitle, selectInitialStitchName } from 'containers/Game/selectors'
 import { setCurrentContext } from 'containers/Game/actions'
-import { setPlayingSound } from 'containers/App/actions'
+import { setPlayingSFX, setPlayingMusic } from 'containers/App/actions'
 
 export class TitlePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+  componentDidMount() {
+    this.props.playMusic('main')
+  }
+
   render() {
     const Title = styled.h1`
       text-align: center;
@@ -56,6 +60,7 @@ TitlePage.propTypes = {
   title: PropTypes.string.isRequired,
   initialStitchName: PropTypes.string.isRequired,
   onStartClick: PropTypes.func.isRequired,
+  playMusic: PropTypes.func.isRequired,
 }
 
 const mapStateToProps = createStructuredSelector({
@@ -66,8 +71,11 @@ const mapStateToProps = createStructuredSelector({
 function mapDispatchToProps(dispatch) {
   return {
     onStartClick: stitchName => {
-      dispatch(setPlayingSound('doinkLo'))
+      dispatch(setPlayingSFX('doinkLo'))
       dispatch(setCurrentContext(stitchName))
+    },
+    playMusic: () => {
+      dispatch(setPlayingMusic('mainTheme'))
     }
   }
 }
