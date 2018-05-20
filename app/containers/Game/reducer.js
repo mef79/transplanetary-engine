@@ -149,6 +149,7 @@ function gameReducer(state = initialState, action) {
           .set('flags', fromJS(JSON.parse(localStorage.getItem('flags'))))
       }
       return state
+
     case CLEAR_LOCAL_STORAGE:
       localStorage.removeItem('currentStitch')
       localStorage.removeItem('visibleStitches')

@@ -30,6 +30,9 @@ module.exports = options => ({
       test: /\.(mp3)$/,
       loader: 'file-loader',
     }, {
+      test: /\.(ogg)$/,
+      loader: 'file-loader',
+    }, {
       test: /\.(otf)$/,
       loader: 'file-loader',
     }, {
