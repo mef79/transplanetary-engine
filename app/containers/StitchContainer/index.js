@@ -41,7 +41,7 @@ class StitchContainer extends React.PureComponent { // eslint-disable-line react
     display: flex;
     flexDirection: column;
     alignItems: center;
-    height: 96.5vh
+    height: 96vh
     `
     const OtherContainer = styled.div`
     display: flex;

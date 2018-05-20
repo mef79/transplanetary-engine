@@ -14,10 +14,10 @@ export class Menu extends React.PureComponent { // eslint-disable-line react/pre
 
   render() {
     return (
-      <div style={{ height: '3.5vh', backgroundColor: 'gray', paddingRight: '10px', textAlign: 'right' }}>
+      <div style={{ height: '4vh', backgroundColor: 'gray', paddingRight: '10px', textAlign: 'right' }}>
         <FontAwesomeIcon
           icon="undo"
-          style={{ color: 'darkgray', verticalAlign: 'top', marginTop: '7px', marginLeft: '20px', cursor: 'pointer' }}
+          style={{ color: 'darkgray', verticalAlign: 'middle', marginTop: '7px', marginLeft: '20px', cursor: 'pointer' }}
           onClick={this.props.clearLocalStorage}
         />
       </div>

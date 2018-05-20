@@ -32,7 +32,6 @@ class Choice extends React.PureComponent { // eslint-disable-line react/prefer-s
       color: white;
       padding: .3em;
       min-width: 30%;
-
       margin-bottom: 10px;
       text-align: center;
     `
