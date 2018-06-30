@@ -36,9 +36,7 @@ export class Game extends React.PureComponent { // eslint-disable-line react/pre
     const Container = styled.div`
     background: url(${SciFiBackground}) no-repeat center center fixed;
     min-height: 100vh;
-    width:100%;
-    width:480px
-    background-size:contain;
+    max-height: 100vh;
     `
 
     let content = null
