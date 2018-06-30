@@ -31,17 +31,18 @@ class StitchContainer extends React.PureComponent { // eslint-disable-line react
     background-color: #000b;
     color: white;
     padding: .3em;
-    width: 95%;
+    width: 100%;
     margin-top: .5em;
-    margin-bottom: .5em;
-    max-height:30vh;
-    overflow:auto;
+    max-height: 28%;
+    min-height: 28%;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
     `
     const Container = styled.div`
     display: flex;
     flexDirection: column;
     alignItems: center;
-    height: 96vh
     `
     const OtherContainer = styled.div`
     display: flex;
@@ -50,8 +51,6 @@ class StitchContainer extends React.PureComponent { // eslint-disable-line react
     justify-content: space-around;
     `
     const PortraitContainer = styled.div`
-    min-height:50vh;
-    max-height:50vh;
     overflow:hidden;
     display: flex;
     justify-content: center;
