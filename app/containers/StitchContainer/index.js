@@ -9,21 +9,42 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
-import { selectVisibleStitches, selectImage } from 'containers/Game/selectors'
+import {
+  selectCurrentStitchCollection,
+  selectCurrentStitch,
+  selectImage
+} from 'containers/Game/selectors'
 import Stitch from 'containers/Stitch'
 import Choices from 'containers/Choices'
+import MoveForward from 'containers/MoveForward'
 import styled from 'styled-components'
 import PortraitImage from 'components/PortraitImage'
 
 class StitchContainer extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 
+  getOptions = stitch => {
+    const options = []
+    stitch.content.forEach(element => {
+      if (element.option) {
+        options.push(element)
+      }
+    })
+    return options
+  }
+
   renderStitches = () => {
     const renderedStitches = []
     let index = 0
-    this.props.visibleStitches.forEach(stitch =>
+    this.props.currentStitchCollection.forEach(stitch =>
       renderedStitches.push(<Stitch key={index++} stitch={stitch} />)
     )
-    return renderedStitches
+  }
+
+  renderBottomContent = () => {
+    if (this.getOptions(this.props.currentStitch.toJS()).length !== 0) {
+      return <Choices />
+    }
+    return <MoveForward />
   }
 
   render() {
@@ -65,8 +86,8 @@ class StitchContainer extends React.PureComponent { // eslint-disable-line react
         </PortraitContainer>
         <OtherContainer>
           <GrayBox>
-            {this.renderStitches()}
-            <Choices />
+            <Stitch stitch={this.props.currentStitch} />
+            { this.renderBottomContent() }
           </GrayBox>
 
         </OtherContainer>
@@ -76,12 +97,14 @@ class StitchContainer extends React.PureComponent { // eslint-disable-line react
 }
 
 StitchContainer.propTypes = {
-  visibleStitches: PropTypes.object.isRequired,
+  currentStitchCollection: PropTypes.object.isRequired,
+  currentStitch: PropTypes.object.isRequired,
   imageUrl: PropTypes.string,
 }
 
 const mapStateToProps = createStructuredSelector({
-  visibleStitches: selectVisibleStitches(),
+  currentStitchCollection: selectCurrentStitchCollection(),
+  currentStitch: selectCurrentStitch(),
   imageUrl: selectImage(),
 })
 

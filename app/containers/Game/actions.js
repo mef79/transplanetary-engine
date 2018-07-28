@@ -7,6 +7,7 @@
 import {
   DEFAULT_ACTION,
   SET_CURRENT_CONTEXT,
+  SET_CURRENT_STITCH,
   LOAD_FROM_LOCAL_STORAGE,
   CLEAR_LOCAL_STORAGE,
 } from './constants'
@@ -20,6 +21,13 @@ export function defaultAction() {
 export function setCurrentContext(stitchName) {
   return {
     type: SET_CURRENT_CONTEXT,
+    stitchName
+  }
+}
+
+export function setCurrentStitch(stitchName) {
+  return {
+    type: SET_CURRENT_STITCH,
     stitchName
   }
 }
