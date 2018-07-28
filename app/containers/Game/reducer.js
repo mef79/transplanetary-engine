@@ -16,7 +16,9 @@ import storyData from '../../ink/story.json'
 const initialState = fromJS({
   storyData,
   currentStitch: null,
-  flags: {}
+  flags: {},
+  finishedLoading: false,
+  image: null,
 })
 
 const getImage = stitch => {
@@ -147,8 +149,9 @@ function gameReducer(state = initialState, action) {
           .set('image', fromJS(JSON.parse(localStorage.getItem('image'))))
           .set('options', fromJS(JSON.parse(localStorage.getItem('options'))))
           .set('flags', fromJS(JSON.parse(localStorage.getItem('flags'))))
+          .set('finishedLoading', true)
       }
-      return state
+      return state.set('finishedLoading', true)
 
     case CLEAR_LOCAL_STORAGE:
       localStorage.removeItem('currentStitch')
@@ -156,6 +159,7 @@ function gameReducer(state = initialState, action) {
       localStorage.removeItem('image')
       localStorage.removeItem('options')
       localStorage.removeItem('flags')
+      localStorage.removeItem('playingMusic')
       return state
         .set('currentStitch', null)
         .set('visibleStitches', null)

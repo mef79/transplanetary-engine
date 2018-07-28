@@ -9,7 +9,7 @@ import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
 import { selectStoryTitle, selectInitialStitchName } from 'containers/Game/selectors'
 import { setCurrentContext } from 'containers/Game/actions'
-import { setPlayingSFX, setPlayingMusic } from 'containers/App/actions'
+import { queueSFX, queueMusic } from 'containers/App/actions'
 
 export class TitlePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   componentDidMount() {
@@ -71,11 +71,11 @@ const mapStateToProps = createStructuredSelector({
 function mapDispatchToProps(dispatch) {
   return {
     onStartClick: stitchName => {
-      dispatch(setPlayingSFX('doinkLo'))
+      dispatch(queueSFX('doinkLo'))
       dispatch(setCurrentContext(stitchName))
     },
     playMusic: () => {
-      dispatch(setPlayingMusic('mainTheme'))
+      dispatch(queueMusic('mainTheme'))
     }
   }
 }

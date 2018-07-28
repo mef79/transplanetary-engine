@@ -19,11 +19,11 @@ export default function configureStore(initialState = {}, history) {
   const allSounds = {
     doinkLo: doinkloFile,
     mainTheme: {
-      urls: [mainThemeFile],
+      src: [mainThemeFile],
       loop: true,
     },
     endTheme: {
-      urls: [endThemeFile],
+      src: [endThemeFile],
       loop: true,
     },
   }
