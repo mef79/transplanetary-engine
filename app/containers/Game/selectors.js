@@ -40,6 +40,11 @@ const selectImage = () => createSelector(
   gameDomain => gameDomain.get('image')
 )
 
+const isFinishedLoading = () => createSelector(
+  selectGameDomain(),
+  gameDomain => gameDomain.get('finishedLoading')
+)
+
 export {
   selectGameDomain,
   selectStoryTitle,
@@ -49,4 +54,5 @@ export {
   selectOptions,
   selectFlags,
   selectImage,
+  isFinishedLoading,
 }
