@@ -6,7 +6,9 @@
 
 import {
   PLAY_SOUND,
-  SET_PLAYING_SFX,
+  STOP_SOUND,
+  QUEUE_SFX,
+  QUEUE_MUSIC,
   SET_PLAYING_MUSIC,
 } from './constants'
 
@@ -17,12 +19,27 @@ export function playSound(sound) {
   }
 }
 
-export function setPlayingSFX(sound) {
+export function stopSound(sound) {
   return {
-    type: SET_PLAYING_SFX,
+    type: STOP_SOUND,
+    meta: { stopSound: sound }
+  }
+}
+
+export function queueSFX(sound) {
+  return {
+    type: QUEUE_SFX,
     sound,
   }
 }
+
+export function queueMusic(sound) {
+  return {
+    type: QUEUE_MUSIC,
+    sound,
+  }
+}
+
 
 export function setPlayingMusic(sound) {
   return {

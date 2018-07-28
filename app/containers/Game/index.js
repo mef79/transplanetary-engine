@@ -9,7 +9,7 @@ import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
 import styled from 'styled-components'
 
-import { selectCurrentStitch } from './selectors'
+import { selectCurrentStitch, isFinishedLoading } from './selectors'
 import { loadFromLocalStorage } from './actions'
 
 import StitchContainer from 'containers/StitchContainer'
@@ -19,7 +19,9 @@ import SciFiBackground from 'images/scifibackground.jpg'
 
 export class Game extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   componentWillMount() {
-    this.props.loadFromLocalStorage()
+    if (!this.props.finishedLoading) {
+      this.props.loadFromLocalStorage()
+    }
   }
 
   render() {
@@ -28,10 +30,16 @@ export class Game extends React.PureComponent { // eslint-disable-line react/pre
     background-size: cover;
     min-height: 100vh;
     `
+
+    let content = null
+    if (this.props.finishedLoading) {
+      content = this.props.currentStitch ? <StitchContainer /> : <TitlePage />
+    }
+
     return (
       <Container>
         <Menu />
-        { this.props.currentStitch ? <StitchContainer /> : <TitlePage /> }
+        { content }
       </Container>
     )
   }
@@ -40,10 +48,12 @@ export class Game extends React.PureComponent { // eslint-disable-line react/pre
 Game.propTypes = {
   currentStitch: PropTypes.object,
   loadFromLocalStorage: PropTypes.func,
+  finishedLoading: PropTypes.bool.isRequired,
 }
 
 const mapStateToProps = createStructuredSelector({
-  currentStitch: selectCurrentStitch()
+  currentStitch: selectCurrentStitch(),
+  finishedLoading: isFinishedLoading(),
 })
 
 function mapDispatchToProps(dispatch) {
