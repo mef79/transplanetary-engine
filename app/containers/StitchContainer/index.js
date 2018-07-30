@@ -9,39 +9,61 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
-import { selectVisibleStitches, selectImage } from 'containers/Game/selectors'
+import {
+  selectCurrentStitchCollection,
+  selectCurrentStitch,
+  selectImage
+} from 'containers/Game/selectors'
 import Stitch from 'containers/Stitch'
 import Choices from 'containers/Choices'
+import MoveForward from 'containers/MoveForward'
 import styled from 'styled-components'
 import PortraitImage from 'components/PortraitImage'
 
 class StitchContainer extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 
+  getOptions = stitch => {
+    const options = []
+    stitch.content.forEach(element => {
+      if (element.option) {
+        options.push(element)
+      }
+    })
+    return options
+  }
+
   renderStitches = () => {
     const renderedStitches = []
     let index = 0
-    this.props.visibleStitches.forEach(stitch =>
+    this.props.currentStitchCollection.forEach(stitch =>
       renderedStitches.push(<Stitch key={index++} stitch={stitch} />)
     )
-    return renderedStitches
+  }
+
+  renderBottomContent = () => {
+    if (this.getOptions(this.props.currentStitch.toJS()).length !== 0) {
+      return <Choices />
+    }
+    return <MoveForward />
   }
 
   render() {
     const GrayBox = styled.div`
-    background-color: #000b;
+    background-color: #000000ee;
     color: white;
     padding: .3em;
-    width: 95%;
+    width: 100%;
     margin-top: .5em;
-    margin-bottom: .5em;
-    max-height:30vh;
-    overflow:auto;
+    max-height: 26vh;
+    min-height: 26vh;
     `
     const Container = styled.div`
     display: flex;
     flexDirection: column;
     alignItems: center;
-    height: 96vh
+    min-height:96.5vh;
+    max-height:96.5vh;
+
     `
     const OtherContainer = styled.div`
     display: flex;
@@ -50,13 +72,12 @@ class StitchContainer extends React.PureComponent { // eslint-disable-line react
     justify-content: space-around;
     `
     const PortraitContainer = styled.div`
-    min-height:50vh;
-    max-height:50vh;
     overflow:hidden;
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    margin: 1em;
+    min-height:70.5vh;
+    max-height:70.5vh;
     `
     return (
       <Container>
@@ -65,11 +86,10 @@ class StitchContainer extends React.PureComponent { // eslint-disable-line react
         </PortraitContainer>
         <OtherContainer>
           <GrayBox>
-            {this.renderStitches()}
+            <Stitch stitch={this.props.currentStitch} />
+            { this.renderBottomContent() }
           </GrayBox>
-          <div style={{ width: '90%' }}>
-            <Choices />
-          </div>
+
         </OtherContainer>
       </Container>
     )
@@ -77,12 +97,14 @@ class StitchContainer extends React.PureComponent { // eslint-disable-line react
 }
 
 StitchContainer.propTypes = {
-  visibleStitches: PropTypes.object.isRequired,
+  currentStitchCollection: PropTypes.object.isRequired,
+  currentStitch: PropTypes.object.isRequired,
   imageUrl: PropTypes.string,
 }
 
 const mapStateToProps = createStructuredSelector({
-  visibleStitches: selectVisibleStitches(),
+  currentStitchCollection: selectCurrentStitchCollection(),
+  currentStitch: selectCurrentStitch(),
   imageUrl: selectImage(),
 })
 

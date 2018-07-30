@@ -20,9 +20,9 @@ const selectCurrentStitch = () => createSelector(
   gameDomain => gameDomain.get('currentStitch')
 )
 
-const selectVisibleStitches = () => createSelector(
+const selectCurrentStitchCollection = () => createSelector(
   selectGameDomain(),
-  gameDomain => gameDomain.get('visibleStitches')
+  gameDomain => gameDomain.get('currentStitchCollection')
 )
 
 const selectOptions = () => createSelector(
@@ -50,7 +50,7 @@ export {
   selectStoryTitle,
   selectInitialStitchName,
   selectCurrentStitch,
-  selectVisibleStitches,
+  selectCurrentStitchCollection,
   selectOptions,
   selectFlags,
   selectImage,

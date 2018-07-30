@@ -26,7 +26,7 @@ export function* handleDecisions(action) {
   const gameData = yield select(selectGameDomain())
   const gameDataJS = gameData.toJS()
 
-  localStorage.setItem('visibleStitches', JSON.stringify(gameDataJS.visibleStitches))
+  localStorage.setItem('currentStitchCollection', JSON.stringify(gameDataJS.currentStitchCollection))
   localStorage.setItem('currentStitch', JSON.stringify(gameDataJS.currentStitch))
   localStorage.setItem('image', JSON.stringify(gameDataJS.image))
   localStorage.setItem('options', JSON.stringify(gameDataJS.options))

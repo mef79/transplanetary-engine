@@ -35,17 +35,25 @@ class Choice extends React.PureComponent { // eslint-disable-line react/prefer-s
       margin-bottom: 10px;
       text-align: center;
     `
+    if (this.props.choice) {
+      return (
+        <GrayBox
+          onClick={this.props.clickFunc}
+          dangerouslySetInnerHTML={{ __html: this.formatStitchContent(this.props.choice.option) }}
+        />
+      )
+    }
     return (
-      <GrayBox
-        onClick={this.props.clickFunc}
-        dangerouslySetInnerHTML={{ __html: this.formatStitchContent(this.props.choice.option) }}
-      />
+      <GrayBox onClick={this.props.clickFunc} >
+        { this.props.text }
+      </GrayBox>
     )
   }
 }
 
 Choice.propTypes = {
-  choice: PropTypes.object.isRequired,
+  text: PropTypes.string,
+  choice: PropTypes.object,
   clickFunc: PropTypes.func.isRequired
 }
 
