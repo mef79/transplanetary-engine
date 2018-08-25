@@ -26,17 +26,10 @@ export class Game extends React.PureComponent { // eslint-disable-line react/pre
 
   render() {
     const SiteWrapper = styled.div`
-    background-color:black;
-    height:100%;
-    width:100%;
-    display: flex;
-    align-items:center;
-    justify-content:center;
-    `
-    const Container = styled.div`
-    background: url(${SciFiBackground}) no-repeat center center fixed;
-    min-height: 100vh;
-    max-height: 100vh;
+      height: 100vh;
+      width: 100vw;
+      background-color: black;
+      color: white;
     `
 
     let content = null
@@ -46,10 +39,10 @@ export class Game extends React.PureComponent { // eslint-disable-line react/pre
 
     return (
       <SiteWrapper>
-        <Container>
+
           <Menu />
           { content }
-        </Container>
+
       </SiteWrapper>
     )
   }

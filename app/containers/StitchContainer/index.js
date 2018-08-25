@@ -48,49 +48,39 @@ class StitchContainer extends React.PureComponent { // eslint-disable-line react
   }
 
   render() {
-    const GrayBox = styled.div`
-    background-color: #000000ee;
-    color: white;
-    padding: .3em;
-    width: 100%;
-    margin-top: .5em;
-    max-height: 26vh;
-    min-height: 26vh;
-    `
     const Container = styled.div`
-    display: flex;
-    flexDirection: column;
-    alignItems: center;
-    min-height:96.5vh;
-    max-height:96.5vh;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;`
 
-    `
-    const OtherContainer = styled.div`
-    display: flex;
-    flexDirection: column;
-    alignItems: center;
-    justify-content: space-around;
-    `
+    const TextContent = styled.div`
+      background-color: black;
+      color: white;
+      flex-grow: 1;
+      padding:15px;
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4c4c4c+0,595959+12,666666+21,474747+35,2c2c2c+57,2b2b2b+76,1c1c1c+91,131313+100 */
+      background: #4c4c4c; /* Old browsers */
+      background: -moz-linear-gradient(top, #4c4c4c 0%, #595959 12%, #666666 21%, #474747 35%, #2c2c2c 57%, #2b2b2b 76%, #1c1c1c 91%, #131313 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, #4c4c4c 0%, #595959 12%, #666666 21%, #474747 35%, #2c2c2c 57%, #2b2b2b 76%, #1c1c1c 91%, #131313 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, #4c4c4c 0%, #595959 12%, #666666 21%, #474747 35%, #2c2c2c 57%, #2b2b2b 76%, #1c1c1c 91%, #131313 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=0 ); /* IE6-9 */`;
+
     const PortraitContainer = styled.div`
-    overflow:hidden;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    min-height:70.5vh;
-    max-height:70.5vh;
+      background-color: rebeccapurple;
+      max-height:450px;
+      min-height:450px;
     `
     return (
       <Container>
         <PortraitContainer>
           <PortraitImage imageUrl={this.props.imageUrl} />
         </PortraitContainer>
-        <OtherContainer>
-          <GrayBox>
+        <TextContent>
             <Stitch stitch={this.props.currentStitch} />
             { this.renderBottomContent() }
-          </GrayBox>
-
-        </OtherContainer>
+        </TextContent>
       </Container>
     )
   }

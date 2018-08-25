@@ -18,27 +18,20 @@ export class TitlePage extends React.PureComponent { // eslint-disable-line reac
 
   render() {
     const Title = styled.h1`
-      text-align: center;
-      font-size:1.2em;
-      background-color:#000e;
-      color:white;
-      padding:1em;
-      width:100%;
+    border:1px solid white;
+    padding: 1px;
+    margin: 1px;
     `
     const PageLayout = styled.div`
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-around;
+    border:1px solid white;
+    margin: 1px;
+    padding: 1px;
+    flex-grow: 1;
     `
     const GrayBox = styled.div`
-      background-color: #000b;
-      color: white;
-      padding: 1em;
-      width: 90%;
-      margin: 1em;
-      margin-bottom: 10px;
-      text-align: center;
+    border:1px solid black;
+    padding: 1px;
+    margin: 1px;
     `
     const onStartButtonClick = () => {
       this.props.onStartClick(this.props.initialStitchName)

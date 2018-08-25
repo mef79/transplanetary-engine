@@ -27,26 +27,21 @@ class Choice extends React.PureComponent { // eslint-disable-line react/prefer-s
   }
 
   render() {
-    const GrayBox = styled.div`
-      background-color: #000b;
+    const Selection = styled.div`
       color: white;
-      padding: .3em;
-      min-width: 30%;
-      margin-bottom: 10px;
-      text-align: center;
     `
     if (this.props.choice) {
       return (
-        <GrayBox
+        <Selection
           onClick={this.props.clickFunc}
           dangerouslySetInnerHTML={{ __html: this.formatStitchContent(this.props.choice.option) }}
         />
       )
     }
     return (
-      <GrayBox onClick={this.props.clickFunc} >
+      <Selection onClick={this.props.clickFunc} >
         { this.props.text }
-      </GrayBox>
+      </Selection>
     )
   }
 }

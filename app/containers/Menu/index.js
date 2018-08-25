@@ -9,18 +9,29 @@ import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import { clearLocalStorage } from 'containers/Game/actions'
+import styled from 'styled-components'
 
 export class Menu extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 
   render() {
+
+    const MenuContainer = styled.div`
+      background-color:black;
+      display: flex;
+      flex-direction:row;
+      padding: 5px;
+      justify-content: space-between;
+      align-items: center;
+    `
     return (
-      <div style={{ height: '4vh', backgroundColor: 'gray', paddingRight: '10px', textAlign: 'right' }}>
+      <MenuContainer >
+        <span>A Really Great Game Title</span>
         <FontAwesomeIcon
           icon="undo"
-          style={{ color: 'darkgray', verticalAlign: 'middle', marginTop: '7px', marginLeft: '20px', cursor: 'pointer' }}
+          style={{ color: 'white',  cursor: 'pointer' }}
           onClick={this.props.clearLocalStorage}
         />
-      </div>
+      </MenuContainer>
     )
   }
 }
