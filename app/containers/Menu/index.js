@@ -14,7 +14,6 @@ import styled from 'styled-components'
 export class Menu extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 
   render() {
-
     const MenuContainer = styled.div`
       background-color:black;
       display: flex;
@@ -28,7 +27,7 @@ export class Menu extends React.PureComponent { // eslint-disable-line react/pre
         <span>A Really Great Game Title</span>
         <FontAwesomeIcon
           icon="undo"
-          style={{ color: 'white',  cursor: 'pointer' }}
+          style={{ color: 'white', cursor: 'pointer' }}
           onClick={this.props.clearLocalStorage}
         />
       </MenuContainer>

@@ -16,7 +16,7 @@ class PortraitImage extends React.PureComponent { // eslint-disable-line react/p
     `
     if (this.props.imageUrl && this.props.imageUrl !== 'clear.jpg') {
       return (
-        <Portrait src={ this.props.imageUrl }  alt="" />
+        <Portrait src={ this.props.imageUrl } alt="" />
       )
     }
     return null

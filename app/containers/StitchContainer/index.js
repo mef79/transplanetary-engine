@@ -65,7 +65,8 @@ class StitchContainer extends React.PureComponent { // eslint-disable-line react
       background: -moz-linear-gradient(top, #4c4c4c 0%, #595959 12%, #666666 21%, #474747 35%, #2c2c2c 57%, #2b2b2b 76%, #1c1c1c 91%, #131313 100%); /* FF3.6-15 */
       background: -webkit-linear-gradient(top, #4c4c4c 0%, #595959 12%, #666666 21%, #474747 35%, #2c2c2c 57%, #2b2b2b 76%, #1c1c1c 91%, #131313 100%); /* Chrome10-25,Safari5.1-6 */
       background: linear-gradient(to bottom, #4c4c4c 0%, #595959 12%, #666666 21%, #474747 35%, #2c2c2c 57%, #2b2b2b 76%, #1c1c1c 91%, #131313 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=0 ); /* IE6-9 */`;
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=0 ); /* IE6-9 */
+    `
 
     const PortraitContainer = styled.div`
       background-color: rebeccapurple;
@@ -78,8 +79,8 @@ class StitchContainer extends React.PureComponent { // eslint-disable-line react
           <PortraitImage imageUrl={this.props.imageUrl} />
         </PortraitContainer>
         <TextContent>
-            <Stitch stitch={this.props.currentStitch} />
-            { this.renderBottomContent() }
+          <Stitch stitch={this.props.currentStitch} />
+          { this.renderBottomContent() }
         </TextContent>
       </Container>
     )
