@@ -19,6 +19,7 @@ import Choices from 'containers/Choices'
 import MoveForward from 'containers/MoveForward'
 import styled from 'styled-components'
 import PortraitImage from 'components/PortraitImage'
+import ForestBackground from 'images/forest.jpg'
 
 class StitchContainer extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 
@@ -69,7 +70,11 @@ class StitchContainer extends React.PureComponent { // eslint-disable-line react
     `
 
     const PortraitContainer = styled.div`
-      background-color: rebeccapurple;
+      background: url(${ForestBackground}) no-repeat center center fixed;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
       max-height:450px;
       min-height:450px;
     `

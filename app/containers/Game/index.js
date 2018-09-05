@@ -15,7 +15,6 @@ import { loadFromLocalStorage } from './actions'
 import StitchContainer from 'containers/StitchContainer'
 import TitlePage from 'containers/TitlePage'
 import Menu from 'containers/Menu'
-// import SciFiBackground from 'images/scifibackground.jpg'
 
 export class Game extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   componentWillMount() {
