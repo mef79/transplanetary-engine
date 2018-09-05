@@ -11,7 +11,10 @@ class PortraitImage extends React.PureComponent { // eslint-disable-line react/p
 
   render() {
     const Portrait = styled.img`
-      height:250px;
+      width: 50%;
+      margin-top:30px;
+      margin-bottom:30px;
+      box-shadow: 2px 2px 17px 12px rgba(0,0,0,0.34);
     `
     if (this.props.imageUrl && this.props.imageUrl !== 'clear.jpg') {
       return (

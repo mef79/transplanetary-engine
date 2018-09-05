@@ -50,11 +50,11 @@ class StitchContainer extends React.PureComponent { // eslint-disable-line react
 
   render() {
     const Container = styled.div`
-      height: 100%;
-      width: 100%;
+
       display: flex;
       flex-direction: column;
-      justify-content: space-between;`
+      justify-content: space-between;
+      flex-grow:1;`
 
     const TextContent = styled.div`
       background-color: black;
@@ -75,8 +75,9 @@ class StitchContainer extends React.PureComponent { // eslint-disable-line react
       flex-direction: row;
       align-items: center;
       justify-content: space-around;
-      max-height:450px;
-      min-height:450px;
+      -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     `
     return (
       <Container>

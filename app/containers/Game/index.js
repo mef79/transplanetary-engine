@@ -29,6 +29,8 @@ export class Game extends React.PureComponent { // eslint-disable-line react/pre
       width: 100vw;
       background-color: black;
       color: white;
+      display:flex;
+      flex-direction:column;
     `
 
     let content = null

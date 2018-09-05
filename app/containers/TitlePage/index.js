@@ -11,25 +11,29 @@ import { selectStoryTitle, selectInitialStitchName } from 'containers/Game/selec
 import { setCurrentContext } from 'containers/Game/actions'
 import { queueSFX, queueMusic } from 'containers/App/actions'
 
+import DarkBackground from 'images/dark.jpg'
+
 export class TitlePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   componentDidMount() {
     this.props.playMusic('main')
   }
 
   render() {
-    const Title = styled.h1`
-    border:1px solid white;
-    padding: 1px;
-    margin: 1px;
+    const Title = styled.h2`
+    text-align:center;
     `
     const PageLayout = styled.div`
-    border:1px solid white;
-    margin: 1px;
-    padding: 1px;
+    background: url(${DarkBackground}) no-repeat center center fixed;
+    height:95vh;
     flex-grow: 1;
+    display:flex;
+    flex-direction:column;
+    padding-top:30%;
     `
     const GrayBox = styled.div`
-    border:1px solid black;
+    border-top:1px solid white;
+    border-bottom:1px solid white;
+    text-align:center;
     padding: 1px;
     margin: 1px;
     `
