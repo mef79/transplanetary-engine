@@ -11,7 +11,6 @@ import appReducer from 'containers/App/reducer'
 import languageProviderReducer from 'containers/LanguageProvider/reducer'
 import gameReducer from 'containers/Game/reducer'
 import menuReducer from 'containers/Menu/reducer'
-import choicesReducer from 'containers/Choices/reducer'
 /*
  * routeReducer
  *
@@ -50,7 +49,6 @@ export default function createReducer(asyncReducers) {
     game: gameReducer,
     language: languageProviderReducer,
     menu: menuReducer,
-    choices: choicesReducer,
     ...asyncReducers,
   })
 }
