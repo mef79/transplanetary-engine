@@ -4,7 +4,7 @@ Converts inklewriter story format into a playable interactive fiction game.
 
 ## Credits
 
-- Originally intended for use with the original work "Transplanetary" by [Carmen Tracey](https://www.facebook.com/CTwrites/)
+- Originally intended for use with the work "Transplanetary" by [Carmen Tracey](https://www.facebook.com/CTwrites/)
 - Music/sound by [Kawazu Delta](https://soundcloud.com/user-741545850)
 - Created with [react-boilerplate](https://github.com/react-boilerplate/react-boilerplate)
 
