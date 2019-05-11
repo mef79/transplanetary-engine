@@ -15,7 +15,6 @@ import { loadFromLocalStorage } from './actions'
 import StitchContainer from 'containers/StitchContainer'
 import TitlePage from 'containers/TitlePage'
 import Menu from 'containers/Menu'
-import SciFiBackground from 'images/scifibackground.jpg'
 
 export class Game extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   componentWillMount() {
@@ -26,7 +25,6 @@ export class Game extends React.PureComponent { // eslint-disable-line react/pre
 
   render() {
     const SiteWrapper = styled.div`
-    background-color:black;
     height:100%;
     width:100%;
     display: flex;
@@ -34,9 +32,10 @@ export class Game extends React.PureComponent { // eslint-disable-line react/pre
     justify-content:center;
     `
     const Container = styled.div`
-    background: url(${SciFiBackground}) no-repeat center center fixed;
-    min-height: 100vh;
-    max-height: 100vh;
+    min-height: 90vh;
+    max-width: 350px;
+    min-width: 350px;
+    background-color: black;
     `
 
     let content = null
