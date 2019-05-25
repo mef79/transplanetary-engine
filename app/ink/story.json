@@ -24,6 +24,8 @@
                 "content": [
                     "But Holmes interrupted my search.",
                     {
+                        "image": "https://picsum.photos/id/197/300/300"
+                    },{
                         "runOn": true
                     },
                     {
@@ -35,6 +37,8 @@
                 "content": [
                     "\"Let me see,\" I began, readying my imagination for some cruelty. \"This document is titled...\"",
                     {
+                        "image": "https://picsum.photos/id/433/300/300"
+                    },{
                         "linkPath": "theAffairOfTheCh",
                         "option": "\"The Affair of the Chinese Tailor\"",
                         "notIfConditions": null,
@@ -58,6 +62,8 @@
                 "content": [
                     "I was surprised to see him, certainly, and asked after his health. The man looked quite uncertain at the question. ",
                     {
+                        "image": "https://picsum.photos/id/198/300/300"
+                    },{
                         "divert": "youHaveProbablyH"
                     }
                 ]
@@ -66,6 +72,8 @@
                 "content": [
                     "\"The Affair of the Chinese Tailor.\"",
                     {
+                        "image": "https://picsum.photos/id/410/300/300"
+                    },{
                         "divert": "holmesLookedUpAt"
                     },
                     {
@@ -80,6 +88,8 @@
                 "content": [
                     "perhaps the oldest inhabited building in the country.\"",
                     {
+                        "image": "https://picsum.photos/id/219/300/300"
+                    },{
                         "linkPath": "youVisitedHimInH",
                         "option": "\"You visited him?\"",
                         "notIfConditions": null,
@@ -97,6 +107,8 @@
                 "content": [
                     "\"A case of importance, then?\"",
                     {
+                        "image": "https://picsum.photos/id/199/300/300"
+                    },{
                         "divert": "aCaseWithLargeIs"
                     },
                     {
@@ -108,6 +120,8 @@
                 "content": [
                     "Holmes looked back at me, but his eyes were lost in some distant, inner stare. \"Ah, Ricoletti,\" he sighed. \"That was a singular affair. The man had the most abominable wife; I should tell you the full details about it some time. But of course that document in your hand begins with the details of how I came by the case: from the mis-shaped footprints in the beds at Kew Gardens, which I discovered quite by chance. Then there was the sixpence buried a thumb's depth below the topsoil...\"",
                     {
+                        "image": "https://picsum.photos/id/165/300/300"
+                    },{
                         "linkPath": "enoughIDropTheBu",
                         "option": "\"Enough.\" It is correct, of course.",
                         "notIfConditions": null,
@@ -125,7 +139,7 @@
                 "content": [
                     "/==/*--*Those who have followed my chronicles of the time I spent in the company of the great Sherlock Holmes may be forgiven for imagining that we were constantly about and afoot, hunting this criminal or dogging the heels of that about the foggy streets of London. ",
                     {
-                        "image": "http://upload.wikimedia.org/wikipedia/commons/7/73/Paget_holmes.png"
+                        "image": "https://picsum.photos/id/684/300/300"
                     },
                     {
                         "divert": "butInTruthThereW"
@@ -142,6 +156,8 @@
                 "content": [
                     "\"Tell me what you think of this. Nothing to do with Chinese tailors, mind,\" he added with a smile.",
                     {
+                        "image": "https://picsum.photos/id/404/300/300"
+                    },{
                         "linkPath": "iTookItFromHimIn",
                         "option": "Take it from him",
                         "notIfConditions": null,
@@ -162,6 +178,8 @@
                 "content": [
                     "\"I do believe, Holmes, you are the most arrogant man alive,\" I told him severely, annoyed {lying about case:that my lie had gone so badly|with his ungentlemanly self-satisfaction}. \"Will you never be bested?\"",
                     {
+                        "image": "https://picsum.photos/id/401/300/300"
+                    },{
                         "divert": "iAmNoFreshYoungW"
                     },
                     {
@@ -198,6 +216,8 @@
                 "content": [
                     "\"Really, Watson,\" he declared {okay attempt:with evident pleasure|severely}. \"You give away your softness of spirit. If you were truly looking to make sport of me, you would choose {okay attempt:a more commonplace name, the better to confound me|a less patently ridiculous name}.\"",
                     {
+                        "image": "https://picsum.photos/id/611/300/300"
+                    },{
                         "linkPath": "youAreQuiteRight",
                         "option": "\"You are quite right.\"",
                         "notIfConditions": null,
@@ -218,6 +238,8 @@
                 "content": [
                     "It contained a crumpled piece of paper, an old-fashioned brass key, a peg of wood with a ball of string attached to it, and three rusty discs of metal.",
                     {
+                        "image": "https://picsum.photos/id/247/300/300"
+                    },{
                         "divert": "wellMyBoyNotWats"
                     },
                     {
@@ -232,6 +254,8 @@
                 "content": [
                     "You're in a sorry mood this evening, aren't you, my good man? Well, perhaps you're lacking for mental exercise. Let's see if we can't warm you up a little. Here is my tale: let's see what you make of it, shall we?",
                     {
+                        "image": "https://picsum.photos/id/245/300/300"
+                    },{
                         "divert": "whenIFirstCameUp"
                     },
                     {
@@ -243,6 +267,8 @@
                 "content": [
                     "I did as instructed and slid back the lid. ",
                     {
+                        "image": "https://picsum.photos/id/378/300/300"
+                    },{
                         "runOn": true
                     },
                     {
@@ -254,6 +280,8 @@
                 "content": [
                     "\"You knew why he was there, of course, as soon as he entered the room.\"",
                     {
+                        "image": "https://picsum.photos/id/623/300/300"
+                    },{
                         "divert": "noNoNotAtAllHolm"
                     }
                 ]
@@ -262,6 +290,8 @@
                 "content": [
                     "\"Then that is quite a feat of memory,\" I replied, glancing around the many and various piles gathered on the desk and underneath it, and spreading across the floor like a forest fungus. {mischevious > 1:\"Even for you.\"|\"There's enough here to fill a small library.\"}",
                     {
+                        "image": "https://picsum.photos/id/230/300/300"
+                    },{
                         "divert": "myDearWatsonHolm"
                     }
                 ]
@@ -292,6 +322,8 @@
                 "content": [
                     "\"In good time, Watson. In good time.\"",
                     {
+                        "image": "https://picsum.photos/id/398/300/300"
+                    },{
                         "divert": "theItemsThemselv"
                     }
                 ]
@@ -300,6 +332,8 @@
                 "content": [
                     "The items themselves did not seem outwardly curious: they were made strange only by their placement alongside each other.",
                     {
+                        "image": "https://picsum.photos/id/421/300/300"
+                    },{
                         "linkPath": "theKeyWasSimplyA",
                         "option": "Examine the key",
                         "notIfConditions": [
@@ -374,6 +408,8 @@
                 "content": [
                     "The key was simply a key, of no great importance. I am sure Holmes himself could have learnt no more from its shape or size.",
                     {
+                        "image": "https://picsum.photos/id/290/300/300"
+                    },{
                         "divert": "theItemsThemselv"
                     },
                     {
@@ -388,6 +424,8 @@
                 "content": [
                     "\"Well, then,\" I replied, lifting a document near by the foot of my chair. \"Let us see about that.\" The bundle I had chosen was no less than seventy pages of close writing. \"Why don't you tell me the tale of this case in my hand, word for word?\"",
                     {
+                        "image": "https://picsum.photos/id/450/300/300"
+                    },{
                         "divert": "holmesLookedBack"
                     },
                     {
@@ -429,6 +467,8 @@
                 "content": [
                     "\"It is /=you=/ who does /=me=/ a disservice,\" Holmes replied, quite sharply now. \"My dear Watson, ",
                     {
+                        "image": "https://picsum.photos/id/449/300/300"
+                    },{
                         "runOn": true
                     },
                     {
@@ -463,6 +503,8 @@
                 "content": [
                     "\"I'm quite sure I could find a case here you have forgotten, all the same,\" I reply, somewhat petulantly, looking around the heaped mountains of manuscripts with a view towards choosing one particularly buried and particularly faded.",
                     {
+                        "image": "https://picsum.photos/id/447/300/300"
+                    },{
                         "divert": "butHolmesInterru"
                     }
                 ]
@@ -471,6 +513,8 @@
                 "content": [
                     "Although it pains me to say it, my friend's undeniably excellent mind and powers of deduction have always had, travelling alongside them, their sister quality of compulsion. There are few puzzles that Holmes did not find easy, even tedious in the extreme, but when presented with a challenge he was never capable of restraining himself. And he was usually successful, and very rapidly so. Therefore the opportunity to confound him was so rare - and hence so valuable - as to be difficult to pass by, despite it hardly being proper for a gentlemen to behave in such a way.",
                     {
+                        "image": "https://picsum.photos/id/446/300/300"
+                    },{
                         "divert": "letMeSeeIBeganRe"
                     },
                     {
@@ -491,6 +535,8 @@
                 "content": [
                     "\"My dear Watson,\" Holmes answered {mischevious> 1:somewhat peevishly|sympathetically}, \"",
                     {
+                        "image": "https://picsum.photos/id/445/300/300"
+                    },{
                         "runOn": true
                     },
                     {
@@ -508,7 +554,7 @@
                 "content": [
                     "He smiled at me with mischievious eyes. \"My dear boy,\" he answered. \"I have not always had my biographer to tidy up after my work. Plenty of these documents are here to remind me of those many cases I tackled when I worked alone. But I do not need to read them to bring their contents to mind; the simple sight of the pages is enough to recall the details.\"",
                     {
-                        "image": "http://upload.wikimedia.org/wikipedia/commons/c/c2/Sherlock_Holmes_I.jpg"
+                        "image": "https://picsum.photos/id/684/300/300"
                     },
                     {
                         "linkPath": "butThereAreHundr",
@@ -528,6 +574,8 @@
                 "content": [
                     "\"In good time, my good man,\" Holmes chided. \"Though I will be honest, my question to Musgrave was quite the same.",
                     {
+                        "image": "https://picsum.photos/id/442/300/300"
+                    },{
                         "runOn": true
                     },
                     {
@@ -539,6 +587,8 @@
                 "content": [
                     "\"Do not trouble yourself with that,\" he remarked, getting to his feet. \"Instead, let me interest you with the facts of a case I most certainly do remember. One moment.\" ",
                     {
+                        "image": "https://picsum.photos/id/440/300/300"
+                    },{
                         "runOn": true
                     },
                     {
@@ -550,6 +600,8 @@
                 "content": [
                     "\"The Collapse of the Wessex Bridge.\"",
                     {
+                        "image": "https://picsum.photos/id/439/300/300"
+                    },{
                         "divert": "holmesLookedOver"
                     },
                     {
@@ -561,6 +613,8 @@
                 "content": [
                     "\"Why do you keep so many papers, Holmes?\" I asked as I pulled the blanket back across my knees. \"Surely you will never read them through.\"",
                     {
+                        "image": "https://picsum.photos/id/438/300/300"
+                    },{
                         "divert": "heSmiledAtMeWith"
                     },
                     {
@@ -665,6 +719,8 @@
                 "content": [
                     "\"But those details I have practised since,\" I replied. \"They are the tools of my trade. If you asked me instead to remember the face of each man I have treated when shot; well, then I should have a harder time of it.\"",
                     {
+                        "image": "https://picsum.photos/id/434/300/300"
+                    },{
                         "divert": "theExamplesDrawn"
                     }
                 ]
@@ -673,6 +729,8 @@
                 "content": [
                     "\"Indeed, Watson, quite correct. I had {not known from college:known him at college, but } not seen him in four years. And then he came to see me.",
                     {
+                        "image": "https://picsum.photos/id/435/300/300"
+                    },{
                         "runOn": true
                     },
                     {
@@ -684,6 +742,8 @@
                 "content": [
                     "\"And not all successes, either. Now here.\" ",
                     {
+                        "image": "https://picsum.photos/id/436/300/300"
+                    },{
                         "divert": "reachingIntoTheT"
                     }
                 ]
@@ -692,6 +752,8 @@
                 "content": [
                     "We had been sitting up the last few hours: he, pasting extracts into his commonplace book while I read through a poor treatise on African diseases recently published by the university, and it was likely we would sit up a while yet, as the hour was still early, despite the heavy dark outside. ",
                     {
+                        "image": "https://picsum.photos/id/437/300/300"
+                    },{
                         "image": "clear.jpg"
                     },
                     {
@@ -781,7 +843,7 @@
                 "content": [
                     "\"These,\" quoth he, \"are all that I have left to remind me of the adventure of the Musgrave Ritual.\"",
                     {
-                        "image": "http://upload.wikimedia.org/wikipedia/commons/2/29/Sherlock_rose_Naval_Treaty.JPG"
+                        "image": "https://picsum.photos/id/683/300/300"
                     },
                     {
                         "linkPath": "tellMeMoreIDeman",
@@ -953,6 +1015,9 @@
                 "content": [
                     "\"Ricoletti of the club-foot,\" I announced, looking at the cover of the page. \"Tell me, my dear Holmes, if you would - what comes next?\"",
                     {
+                        "image": "https://picsum.photos/id/682/300/300"
+                    },
+                    {
                         "divert": "holmesLookedBack"
                     },
                     {
@@ -1029,6 +1094,9 @@
             "veryCuriousAndTh": {
                 "content": [
                     "\"Very curious, and the story that hangs round it will strike you as being more curious still.\"",
+                    {
+                        "image": "https://picsum.photos/id/633/300/300"
+                    },
                     {
                         "linkPath": "theseRelicsHaveA",
                         "option": "\"These relics have a history?\"",
