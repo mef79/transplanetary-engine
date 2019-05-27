@@ -54,15 +54,13 @@ class StitchContainer extends React.PureComponent { // eslint-disable-line react
     padding: .3em;
     width: 100%;
     margin-top: .5em;
-    max-height: 26vh;
-    min-height: 26vh;
+
     `
     const Container = styled.div`
     display: flex;
     flexDirection: column;
     alignItems: center;
-    min-height:96.5vh;
-    max-height:96.5vh;
+
 
     `
     const OtherContainer = styled.div`
@@ -76,8 +74,9 @@ class StitchContainer extends React.PureComponent { // eslint-disable-line react
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    min-height:70.5vh;
-    max-height:70.5vh;
+    min-height:300px;
+    margin-top:20px;
+
     `
     return (
       <Container>

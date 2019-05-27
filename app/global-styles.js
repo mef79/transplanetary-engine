@@ -48,4 +48,9 @@ injectGlobal`
   .slider__tick {
     height: 10px;
   }
+
+  .stitchContent {
+    text-align: center;
+    padding: 1em;
+  }
 `
